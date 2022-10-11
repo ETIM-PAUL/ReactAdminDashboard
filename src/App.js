@@ -5,9 +5,11 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { SideBar } from './components/SideBar';
 import { NavBar } from './components/NavBar';
 import { useStateContext } from './contexts/'
+import { AdminDashboard } from './containers/AdminDashboard';
 
 function App() {
-  const { activeMenu } = useStateContext()
+  const { state } = useStateContext()
+  const { activeMenu } = state
   return (
     <div>
       <BrowserRouter>
@@ -27,17 +29,19 @@ function App() {
           {activeMenu ? (
             <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white"><SideBar /></div>
           ) : (
-            <div className="w-0 dark:bg-secondary-dark-bg" />
+            <div className="w-0 dark:bg-secondary-dark-bg">
+              <SideBar />
+            </div>
           )}
-          <div className={`dark:bg-main-bg bg-main-bg min-h-screen w-full ${activeMenu ? 'md:ml-72 ' : 'flex-2'}`}>
+          <div className={`dark:bg-main-bg bg-main-bg h-10 min-h-10 w-full ${activeMenu ? 'md:ml-72 ' : 'flex-2'}`}>
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar full"><NavBar /></div>
-          </div>
 
-          <div>
-            <Routes>
-              <Route path="/" element="ECommerce" />
-              <Route path="/ecommerce" element="ECommerce" />
-            </Routes>
+            <div>
+              <Routes>
+                <Route path="/" element={<AdminDashboard />} />
+                <Route path="/admin" element={<AdminDashboard />} />
+              </Routes>
+            </div>
           </div>
         </div>
       </BrowserRouter>

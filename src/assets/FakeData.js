@@ -1,10 +1,10 @@
 import React from 'react';
-import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
-import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
-import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
+import { AiOutlineCalendar, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
+import { FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
+import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft, BsFillBookmarkPlusFill } from 'react-icons/bs';
 import { BiColorFill } from 'react-icons/bi';
 import { IoMdContacts } from 'react-icons/io';
-import { RiContactsLine, RiStockLine } from 'react-icons/ri';
+import { RiAdminFill, RiContactsLine, RiStockLine } from 'react-icons/ri';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
 import { HiOutlineRefresh } from 'react-icons/hi';
 import { TiTick } from 'react-icons/ti';
@@ -512,8 +512,8 @@ export const links = [
     title: 'Dashboard',
     links: [
       {
-        name: 'ecommerce',
-        icon: <FiShoppingBag />,
+        name: 'admin',
+        icon: <RiAdminFill />,
       },
     ],
   },
@@ -522,15 +522,15 @@ export const links = [
     title: 'Pages',
     links: [
       {
-        name: 'orders',
-        icon: <AiOutlineShoppingCart />,
+        name: 'Appointments',
+        icon: <BsFillBookmarkPlusFill />,
       },
       {
         name: 'employees',
         icon: <IoMdContacts />,
       },
       {
-        name: 'customers',
+        name: 'patients',
         icon: <RiContactsLine />,
       },
     ],
@@ -651,7 +651,7 @@ export const chatData = [
   },
 ];
 
-export const earningData = [
+export const billsData = [
   {
     icon: <MdOutlineSupervisorAccount />,
     amount: '39,354',
@@ -3122,11 +3122,30 @@ export const dropdownData = [
   },
 ];
 export const SparklineAreaData = [
-  { x: 1, yval: 2 },
+  { x: 1, yval: 5 },
   { x: 2, yval: 6 },
-  { x: 3, yval: 8 },
-  { x: 4, yval: 5 },
-  { x: 5, yval: 10 },
+  { x: 3, yval: 5 },
+  { x: 4, yval: 7 },
+  { x: 5, yval: 4 },
+  { x: 6, yval: 3 },
+  { x: 7, yval: 9 },
+  { x: 8, yval: 5 },
+  { x: 9, yval: 6 },
+  { x: 10, yval: 5 },
+  { x: 11, yval: 7 },
+  { x: 12, yval: 8 },
+  { x: 13, yval: 4 },
+  { x: 14, yval: 5 },
+  { x: 15, yval: 3 },
+  { x: 16, yval: 4 },
+  { x: 17, yval: 11 },
+  { x: 18, yval: 10 },
+  { x: 19, yval: 2 },
+  { x: 20, yval: 12 },
+  { x: 21, yval: 4 },
+  { x: 22, yval: 7 },
+  { x: 23, yval: 6 },
+  { x: 24, yval: 8 },
 
 ];
 

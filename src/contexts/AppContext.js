@@ -1,21 +1,23 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useReducer } from 'react';
+import { StateReducer } from './AppReducer';
 
 const StateContext = createContext()
 
-const initialState = {
-  chat: false,
-  cart: false,
-  userProfile: false,
-  notification: false,
-}
 export const ContextProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(StateReducer, {
+    chat: false,
+    cart: false,
+    userProfile: false,
+    notification: false,
+    activeMenu: true,
+    screenSize: undefined,
+  });
 
-  const [activeMenu, setActiveMenu] = useState(true)
+  const value = { state, dispatch }
+
   return (
     <StateContext.Provider
-      value={{
-        activeMenu
-      }}>
+      value={value}>
       {children}
     </StateContext.Provider>
   )
