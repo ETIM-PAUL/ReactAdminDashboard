@@ -1,0 +1,1 @@
+export { Patients } from './Patients'

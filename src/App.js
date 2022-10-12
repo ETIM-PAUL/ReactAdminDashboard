@@ -6,6 +6,9 @@ import { SideBar } from './components/SideBar';
 import { NavBar } from './components/NavBar';
 import { useStateContext } from './contexts/'
 import { AdminDashboard } from './containers/AdminDashboard';
+import { Patients } from './containers/Patients';
+import { Employees } from './containers/Employees';
+import "./App.css";
 
 function App() {
   const { state } = useStateContext()
@@ -33,13 +36,15 @@ function App() {
               <SideBar />
             </div>
           )}
-          <div className={`dark:bg-main-bg bg-main-bg h-10 min-h-10 w-full ${activeMenu ? 'md:ml-72 ' : 'flex-2'}`}>
+          <div className={`dark:bg-main-bg bg-main-bg min-h-10 w-full ${activeMenu ? 'md:ml-72 ' : 'flex-2'}`}>
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar full"><NavBar /></div>
 
             <div>
               <Routes>
                 <Route path="/" element={<AdminDashboard />} />
                 <Route path="/admin" element={<AdminDashboard />} />
+                <Route path="/employees" element={<Employees />} />
+                <Route path="/patients" element={<Patients />} />
               </Routes>
             </div>
           </div>

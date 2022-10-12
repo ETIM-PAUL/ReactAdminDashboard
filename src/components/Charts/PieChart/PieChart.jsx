@@ -6,4 +6,5 @@ const PieChart = () => {
   )
 }
 
-export default PieChart
+const PieChartMemo = memo(PieChart)
+export { PieChartMemo as PieChart }

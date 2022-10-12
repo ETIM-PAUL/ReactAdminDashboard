@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiOutlineCalendar, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
 import { FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
-import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft, BsFillBookmarkPlusFill } from 'react-icons/bs';
+import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
 import { BiColorFill } from 'react-icons/bi';
 import { IoMdContacts } from 'react-icons/io';
 import { RiAdminFill, RiContactsLine, RiStockLine } from 'react-icons/ri';
@@ -14,34 +14,10 @@ import avatar from './avatar.jpg';
 import avatar2 from './avatar2.jpg';
 import avatar3 from './avatar3.png';
 import avatar4 from './avatar4.jpg';
-import product1 from './product1.jpg';
-import product2 from './product2.jpg';
-import product3 from './product3.jpg';
 import product4 from './product4.jpg';
 import product5 from './product5.jpg';
 import product6 from './product6.jpg';
 import product7 from './product7.jpg';
-import product8 from './product8.jpg';
-
-export const gridOrderImage = (props) => (
-  <div>
-    <img
-      className="rounded-xl h-20 md:ml-3"
-      src={props.ProductImage}
-      alt="order-item"
-    />
-  </div>
-);
-
-export const gridOrderStatus = (props) => (
-  <button
-    type="button"
-    style={{ background: props.StatusBg }}
-    className="text-white py-1 px-2 capitalize rounded-2xl text-md"
-  >
-    {props.Status}
-  </button>
-);
 
 export const kanbanGrid = [
   {
@@ -128,21 +104,20 @@ export const EditorData = () => (
     </h3>
   </div>
 );
-const customerGridImage = (props) => (
-  <div className="image flex gap-4">
+const patientGridImage = (props) => (
+  <div className="image flex gap-4 items-center">
     <img
       className="rounded-full w-10 h-10"
-      src={props.CustomerImage}
+      src={props.PatientImage}
       alt="employee"
     />
     <div>
-      <p>{props.CustomerName}</p>
-      <p>{props.CustomerEmail}</p>
+      <p>{props.PatientName}</p>
     </div>
   </div>
 );
 
-const customerGridStatus = (props) => (
+const patientGridStatus = (props) => (
   <div className="flex gap-2 justify-center items-center text-gray-700 capitalize">
     <p style={{ background: props.StatusBg }} className="rounded-full h-3 w-3" />
     <p>{props.Status}</p>
@@ -222,7 +197,7 @@ export const areaCustomSeries = [
     dataSource: areaChartData[0],
     xName: 'x',
     yName: 'y',
-    name: 'USA',
+    name: 'Nigeria',
     opacity: '0.8',
     type: 'SplineArea',
     width: '2',
@@ -250,17 +225,17 @@ export const areaCustomSeries = [
 
 export const barChartData = [
   [
-    { x: 'USA', y: 46 },
+    { x: 'Nigeria', y: 46 },
     { x: 'GBR', y: 27 },
     { x: 'CHN', y: 26 },
   ],
   [
-    { x: 'USA', y: 37 },
+    { x: 'Nigeria', y: 37 },
     { x: 'GBR', y: 23 },
     { x: 'CHN', y: 18 },
   ],
   [
-    { x: 'USA', y: 38 },
+    { x: 'Nigeria', y: 38 },
     { x: 'GBR', y: 17 },
     { x: 'CHN', y: 26 },
   ],
@@ -405,72 +380,12 @@ export const LinePrimaryYAxis = {
   minorTickLines: { width: 0 },
 };
 
-export const customersGrid = [
-  { type: 'checkbox', width: '50' },
-  {
-    headerText: 'Name',
-    width: '150',
-    template: customerGridImage,
-    textAlign: 'Center'
-  },
-  {
-    field: 'ProjectName',
-    headerText: 'Project Name',
-    width: '150',
-    textAlign: 'Center'
-  },
-  {
-    field: 'Status',
-    headerText: 'Status',
-    width: '130',
-    format: 'yMd',
-    textAlign: 'Center',
-    template: customerGridStatus
-  },
-  {
-    field: 'Weeks',
-    headerText: 'Weeks',
-    width: '100',
-    format: 'C2',
-    textAlign: 'Center'
-  },
-  {
-    field: 'Budget',
-    headerText: 'Budget',
-    width: '100',
-    format: 'yMd',
-    textAlign: 'Center'
-  },
-
-  {
-    field: 'Location',
-    headerText: 'Location',
-    width: '150',
-    textAlign: 'Center'
-  },
-
-  {
-    field: 'CustomerID',
-    headerText: 'Customer ID',
-    width: '120',
-    textAlign: 'Center',
-    isPrimaryKey: true,
-  },
-
-];
-
 export const employeesGrid = [
   {
     headerText: 'Employee',
     width: '150',
     template: gridEmployeeProfile,
     textAlign: 'Center'
-  },
-  {
-    field: 'Name',
-    headerText: '',
-    width: '0',
-    textAlign: 'Center',
   },
   {
     field: 'Title',
@@ -521,10 +436,6 @@ export const links = [
   {
     title: 'Pages',
     links: [
-      {
-        name: 'Appointments',
-        icon: <BsFillBookmarkPlusFill />,
-      },
       {
         name: 'employees',
         icon: <IoMdContacts />,
@@ -654,18 +565,18 @@ export const chatData = [
 export const billsData = [
   {
     icon: <MdOutlineSupervisorAccount />,
-    amount: '39,354',
+    amount: '354',
     percentage: '-4%',
-    title: 'Customers',
+    title: 'Employees',
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',
     pcColor: 'red-600',
   },
   {
     icon: <BsBoxSeam />,
-    amount: '4,396',
+    amount: '1,396',
     percentage: '+23%',
-    title: 'Products',
+    title: 'Patients',
     iconColor: 'rgb(255, 244, 229)',
     iconBg: 'rgb(254, 201, 15)',
     pcColor: 'green-600',
@@ -908,29 +819,31 @@ export const userProfileData = [
   },
 ];
 
-export const ordersGrid = [
-  {
-    headerText: 'Image',
-    template: gridOrderImage,
+export const patientsGrid = [
+  { type: 'checkbox', width: '50' },
+
+   {
+    width: '150',
+    template: patientGridImage,
     textAlign: 'Center',
-    width: '120',
+    headerText: 'Patient',
   },
   {
-    field: 'OrderItems',
-    headerText: 'Item',
+    field: 'PatientName',
+    headerText: '',
+    width: '0',
+    textAlign: 'Center',
+  },
+  {
+    field: 'Illness',
+    headerText: 'Illness',
     width: '150',
     editType: 'dropdownedit',
     textAlign: 'Center',
   },
   {
-    field: 'CustomerName',
-    headerText: 'Customer Name',
-    width: '150',
-    textAlign: 'Center',
-  },
-  {
-    field: 'TotalAmount',
-    headerText: 'Total Amount',
+    field: 'TotalBills',
+    headerText: 'Bills Accured',
     format: 'C2',
     textAlign: 'Center',
     editType: 'numericedit',
@@ -938,1948 +851,447 @@ export const ordersGrid = [
   },
   {
     headerText: 'Status',
-    template: gridOrderStatus,
+    template: patientGridStatus,
     field: 'OrderItems',
     textAlign: 'Center',
     width: '120',
   },
   {
-    field: 'OrderID',
-    headerText: 'Order ID',
+    field: 'PatientID',
+    headerText: 'Patient ID',
     width: '120',
     textAlign: 'Center',
+    isPrimaryKey: true,
   },
-
-  {
-    field: 'Location',
-    headerText: 'Location',
-    width: '150',
-    textAlign: 'Center',
-  },
-];
-
-export const customersData = [
-  {
-    CustomerID: 1001,
-    CustomerName: 'Nirav Joshi',
-    CustomerEmail: 'nirav@gmail.com',
-    CustomerImage:
-      avatar2,
-    ProjectName: 'Hosting Press HTML',
-    Status: 'Active',
-    StatusBg: '#8BE78B',
-    Weeks: '40',
-    Budget: '$2.4k',
-    Location: 'India',
-  },
-  {
-    CustomerID: 1002,
-
-    CustomerName: 'Sunil Joshi',
-    CustomerEmail: 'sunil@gmail.com',
-    ProjectName: 'Elite Admin',
-    Status: 'Active',
-    CustomerImage:
-      avatar3,
-
-    StatusBg: '#8BE78B',
-    Weeks: '11',
-    Budget: '$3.9k',
-    Location: 'India',
-  },
-  {
-    CustomerID: 1003,
-
-    CustomerName: 'Andrew McDownland',
-    CustomerEmail: 'andrew@gmail.com',
-    ProjectName: 'Real Homes WP Theme',
-    Status: 'Pending',
-    CustomerImage:
-      avatar4,
-    StatusBg: '#FEC90F',
-    Weeks: '19',
-    Budget: '$24.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1004,
-
-    CustomerName: 'Christopher Jamil',
-    CustomerEmail: 'jamil@gmail.com',
-    ProjectName: 'MedicalPro WP Theme',
-    Status: 'Completed',
-    CustomerImage:
-      avatar,
-    StatusBg: '#8BE78B',
-    Weeks: '34',
-    Budget: '$16.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1005,
-
-    CustomerName: 'Michael',
-    CustomerEmail: 'michael@gmail.com',
-    ProjectName: 'Weekly WP Theme',
-    Status: 'Cancel',
-    CustomerImage:
-      avatar2,
-    StatusBg: 'red',
-    Weeks: '34',
-    Budget: '$16.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1006,
-    CustomerName: 'Nirav Joshi',
-    CustomerEmail: 'nirav@gmail.com',
-    CustomerImage:
-      avatar2,
-    ProjectName: 'Hosting Press HTML',
-    Status: 'Active',
-    StatusBg: '#8BE78B',
-    Weeks: '40',
-    Budget: '$2.4k',
-    Location: 'India',
-  },
-  {
-    CustomerID: 1007,
-
-    CustomerName: 'Sunil Joshi',
-    CustomerEmail: 'sunil@gmail.com',
-    ProjectName: 'Elite Admin',
-    Status: 'Active',
-    CustomerImage:
-      avatar3,
-
-    StatusBg: '#8BE78B',
-    Weeks: '11',
-    Budget: '$3.9k',
-    Location: 'India',
-  },
-  {
-    CustomerID: 1008,
-
-    CustomerName: 'Andrew McDownland',
-    CustomerEmail: 'andrew@gmail.com',
-    ProjectName: 'Real Homes WP Theme',
-    Status: 'Pending',
-    CustomerImage:
-      avatar4,
-    StatusBg: '#FEC90F',
-    Weeks: '19',
-    Budget: '$24.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1009,
-
-    CustomerName: 'Christopher Jamil',
-    CustomerEmail: 'jamil@gmail.com',
-    ProjectName: 'MedicalPro WP Theme',
-    Status: 'Completed',
-    CustomerImage:
-      avatar,
-    StatusBg: '#8BE78B',
-    Weeks: '34',
-    Budget: '$16.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1010,
-
-    CustomerName: 'Michael',
-    CustomerEmail: 'michael@gmail.com',
-    ProjectName: 'Weekly WP Theme',
-    Status: 'Cancel',
-    CustomerImage:
-      avatar2,
-    StatusBg: 'red',
-    Weeks: '34',
-    Budget: '$16.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1011,
-    CustomerName: 'Nirav Joshi',
-    CustomerEmail: 'nirav@gmail.com',
-    CustomerImage:
-      avatar2,
-    ProjectName: 'Hosting Press HTML',
-    Status: 'Active',
-    StatusBg: '#8BE78B',
-    Weeks: '40',
-    Budget: '$2.4k',
-    Location: 'India',
-  },
-  {
-    CustomerID: 1012,
-
-    CustomerName: 'Sunil Joshi',
-    CustomerEmail: 'sunil@gmail.com',
-    ProjectName: 'Elite Admin',
-    Status: 'Active',
-    CustomerImage:
-      avatar3,
-
-    StatusBg: '#8BE78B',
-    Weeks: '11',
-    Budget: '$3.9k',
-    Location: 'India',
-  },
-  {
-    CustomerID: 1013,
-
-    CustomerName: 'Andrew McDownland',
-    CustomerEmail: 'andrew@gmail.com',
-    ProjectName: 'Real Homes WP Theme',
-    Status: 'Pending',
-    CustomerImage:
-      avatar4,
-    StatusBg: '#FEC90F',
-    Weeks: '19',
-    Budget: '$24.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1014,
-
-    CustomerName: 'Christopher Jamil',
-    CustomerEmail: 'jamil@gmail.com',
-    ProjectName: 'MedicalPro WP Theme',
-    Status: 'Completed',
-    CustomerImage:
-      avatar,
-    StatusBg: '#8BE78B',
-    Weeks: '34',
-    Budget: '$16.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1015,
-
-    CustomerName: 'Michael',
-    CustomerEmail: 'michael@gmail.com',
-    ProjectName: 'Weekly WP Theme',
-    Status: 'Cancel',
-    CustomerImage:
-      avatar2,
-    StatusBg: 'red',
-    Weeks: '34',
-    Budget: '$16.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1016,
-    CustomerName: 'Nirav Joshi',
-    CustomerEmail: 'nirav@gmail.com',
-    CustomerImage:
-      avatar2,
-    ProjectName: 'Hosting Press HTML',
-    Status: 'Active',
-    StatusBg: '#8BE78B',
-    Weeks: '40',
-    Budget: '$2.4k',
-    Location: 'India',
-  },
-  {
-    CustomerID: 1017,
-
-    CustomerName: 'Sunil Joshi',
-    CustomerEmail: 'sunil@gmail.com',
-    ProjectName: 'Elite Admin',
-    Status: 'Active',
-    CustomerImage:
-      avatar3,
-
-    StatusBg: '#8BE78B',
-    Weeks: '11',
-    Budget: '$3.9k',
-    Location: 'India',
-  },
-  {
-    CustomerID: 1018,
-
-    CustomerName: 'Andrew McDownland',
-    CustomerEmail: 'andrew@gmail.com',
-    ProjectName: 'Real Homes WP Theme',
-    Status: 'Pending',
-    CustomerImage:
-      avatar4,
-    StatusBg: '#FEC90F',
-    Weeks: '19',
-    Budget: '$24.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1019,
-
-    CustomerName: 'Christopher Jamil',
-    CustomerEmail: 'jamil@gmail.com',
-    ProjectName: 'MedicalPro WP Theme',
-    Status: 'Completed',
-    CustomerImage:
-      avatar,
-    StatusBg: '#8BE78B',
-    Weeks: '34',
-    Budget: '$16.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1020,
-
-    CustomerName: 'Michael',
-    CustomerEmail: 'michael@gmail.com',
-    ProjectName: 'Weekly WP Theme',
-    Status: 'Cancel',
-    CustomerImage:
-      avatar2,
-    StatusBg: 'red',
-    Weeks: '34',
-    Budget: '$16.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1021,
-    CustomerName: 'Nirav Joshi',
-    CustomerEmail: 'nirav@gmail.com',
-    CustomerImage:
-      avatar2,
-    ProjectName: 'Hosting Press HTML',
-    Status: 'Active',
-    StatusBg: '#8BE78B',
-    Weeks: '40',
-    Budget: '$2.4k',
-    Location: 'India',
-  },
-  {
-    CustomerID: 1022,
-
-    CustomerName: 'Sunil Joshi',
-    CustomerEmail: 'sunil@gmail.com',
-    ProjectName: 'Elite Admin',
-    Status: 'Active',
-    CustomerImage:
-      avatar3,
-
-    StatusBg: '#8BE78B',
-    Weeks: '11',
-    Budget: '$3.9k',
-    Location: 'India',
-  },
-  {
-    CustomerID: 1023,
-
-    CustomerName: 'Andrew McDownland',
-    CustomerEmail: 'andrew@gmail.com',
-    ProjectName: 'Real Homes WP Theme',
-    Status: 'Pending',
-    CustomerImage:
-      avatar4,
-    StatusBg: '#FEC90F',
-    Weeks: '19',
-    Budget: '$24.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1024,
-
-    CustomerName: 'Christopher Jamil',
-    CustomerEmail: 'jamil@gmail.com',
-    ProjectName: 'MedicalPro WP Theme',
-    Status: 'Completed',
-    CustomerImage:
-      avatar,
-    StatusBg: '#8BE78B',
-    Weeks: '34',
-    Budget: '$16.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1025,
-
-    CustomerName: 'Michael',
-    CustomerEmail: 'michael@gmail.com',
-    ProjectName: 'Weekly WP Theme',
-    Status: 'Cancel',
-    CustomerImage:
-      avatar2,
-    StatusBg: 'red',
-    Weeks: '34',
-    Budget: '$16.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1026,
-    CustomerName: 'Nirav Joshi',
-    CustomerEmail: 'nirav@gmail.com',
-    CustomerImage:
-      avatar2,
-    ProjectName: 'Hosting Press HTML',
-    Status: 'Active',
-    StatusBg: '#8BE78B',
-    Weeks: '40',
-    Budget: '$2.4k',
-    Location: 'India',
-  },
-  {
-    CustomerID: 1027,
-
-    CustomerName: 'Sunil Joshi',
-    CustomerEmail: 'sunil@gmail.com',
-    ProjectName: 'Elite Admin',
-    Status: 'Active',
-    CustomerImage:
-      avatar3,
-
-    StatusBg: '#8BE78B',
-    Weeks: '11',
-    Budget: '$3.9k',
-    Location: 'India',
-  },
-  {
-    CustomerID: 1028,
-
-    CustomerName: 'Andrew McDownland',
-    CustomerEmail: 'andrew@gmail.com',
-    ProjectName: 'Real Homes WP Theme',
-    Status: 'Pending',
-    CustomerImage:
-      avatar4,
-    StatusBg: '#FEC90F',
-    Weeks: '19',
-    Budget: '$24.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1029,
-
-    CustomerName: 'Christopher Jamil',
-    CustomerEmail: 'jamil@gmail.com',
-    ProjectName: 'MedicalPro WP Theme',
-    Status: 'Completed',
-    CustomerImage:
-      avatar,
-    StatusBg: '#8BE78B',
-    Weeks: '34',
-    Budget: '$16.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1030,
-
-    CustomerName: 'Michael',
-    CustomerEmail: 'michael@gmail.com',
-    ProjectName: 'Weekly WP Theme',
-    Status: 'Cancel',
-    CustomerImage:
-      avatar2,
-    StatusBg: 'red',
-    Weeks: '34',
-    Budget: '$16.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1031,
-    CustomerName: 'Nirav Joshi',
-    CustomerEmail: 'nirav@gmail.com',
-    CustomerImage:
-      avatar2,
-    ProjectName: 'Hosting Press HTML',
-    Status: 'Active',
-    StatusBg: '#8BE78B',
-    Weeks: '40',
-    Budget: '$2.4k',
-    Location: 'India',
-  },
-  {
-    CustomerID: 1032,
-
-    CustomerName: 'Sunil Joshi',
-    CustomerEmail: 'sunil@gmail.com',
-    ProjectName: 'Elite Admin',
-    Status: 'Active',
-    CustomerImage:
-      avatar3,
-
-    StatusBg: '#8BE78B',
-    Weeks: '11',
-    Budget: '$3.9k',
-    Location: 'India',
-  },
-  {
-    CustomerID: 1033,
-
-    CustomerName: 'Andrew McDownland',
-    CustomerEmail: 'andrew@gmail.com',
-    ProjectName: 'Real Homes WP Theme',
-    Status: 'Pending',
-    CustomerImage:
-      avatar4,
-    StatusBg: '#FEC90F',
-    Weeks: '19',
-    Budget: '$24.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1034,
-
-    CustomerName: 'Christopher Jamil',
-    CustomerEmail: 'jamil@gmail.com',
-    ProjectName: 'MedicalPro WP Theme',
-    Status: 'Completed',
-    CustomerImage:
-      avatar,
-    StatusBg: '#8BE78B',
-    Weeks: '34',
-    Budget: '$16.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1035,
-
-    CustomerName: 'Michael',
-    CustomerEmail: 'michael@gmail.com',
-    ProjectName: 'Weekly WP Theme',
-    Status: 'Cancel',
-    CustomerImage:
-      avatar2,
-    StatusBg: 'red',
-    Weeks: '34',
-    Budget: '$16.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1036,
-    CustomerName: 'Nirav Joshi',
-    CustomerEmail: 'nirav@gmail.com',
-    CustomerImage:
-      avatar2,
-    ProjectName: 'Hosting Press HTML',
-    Status: 'Active',
-    StatusBg: '#8BE78B',
-    Weeks: '40',
-    Budget: '$2.4k',
-    Location: 'India',
-  },
-  {
-    CustomerID: 1037,
-
-    CustomerName: 'Sunil Joshi',
-    CustomerEmail: 'sunil@gmail.com',
-    ProjectName: 'Elite Admin',
-    Status: 'Active',
-    CustomerImage:
-      avatar3,
-
-    StatusBg: '#8BE78B',
-    Weeks: '11',
-    Budget: '$3.9k',
-    Location: 'India',
-  },
-  {
-    CustomerID: 1038,
-
-    CustomerName: 'Andrew McDownland',
-    CustomerEmail: 'andrew@gmail.com',
-    ProjectName: 'Real Homes WP Theme',
-    Status: 'Pending',
-    CustomerImage:
-      avatar4,
-    StatusBg: '#FEC90F',
-    Weeks: '19',
-    Budget: '$24.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1039,
-    CustomerName: 'Christopher Jamil',
-    CustomerEmail: 'jamil@gmail.com',
-    ProjectName: 'MedicalPro WP Theme',
-    Status: 'Completed',
-    CustomerImage:
-      avatar,
-    StatusBg: '#8BE78B',
-    Weeks: '34',
-    Budget: '$16.5k',
-    Location: 'USA',
-  },
-  {
-    CustomerID: 1040,
-    CustomerName: 'Michael',
-    CustomerEmail: 'michael@gmail.com',
-    ProjectName: 'Weekly WP Theme',
-    Status: 'Cancel',
-    CustomerImage:
-      avatar2,
-    StatusBg: 'red',
-    Weeks: '34',
-    Budget: '$16.5k',
-    Location: 'USA',
-  },
-
 ];
 
 export const employeesData = [
   {
     EmployeeID: 1,
-    Name: 'Nancy Davolio',
-    Title: 'Sales Representative',
+    Name: 'Etim Paul',
+    Title: 'Chief Medical Director',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Minister, Ministry of Health',
     EmployeeImage:
       avatar3,
   },
   {
     EmployeeID: 2,
-    Name: 'Nasimiyu Danai',
-    Title: 'Marketing Head',
+    Name: 'Ifeanyi John',
+    Title: 'Senior Consultant',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Paul',
     EmployeeImage:
       avatar3,
   },
   {
     EmployeeID: 3,
-    Name: 'Iulia Albu',
-    Title: 'HR',
+    Name: 'Oge Chi',
+    Title: 'Senior Consultant',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Paul',
     EmployeeImage:
       avatar4,
   },
   {
     EmployeeID: 4,
     Name: 'Siegbert Gottfried',
-    Title: 'Marketing Head',
+    Title: 'Foreign Consultant',
     HireDate: '01/02/2021',
     Country: 'USA',
-    ReportsTo: 'Carson',
+    ReportsTo: 'Paul',
     EmployeeImage:
       avatar2,
   },
   {
     EmployeeID: 5,
     Name: 'Omar Darobe',
-    Title: 'HR',
+    Title: 'Foreign Consultant',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'India',
+    ReportsTo: 'Paul',
     EmployeeImage:
       avatar,
   },
   {
     EmployeeID: 4,
-    Name: 'Penjani Inyene',
-    Title: 'Marketing Head',
+    Name: 'Udom Inyene',
+    Title: 'Registrar',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Paul',
     EmployeeImage:
       avatar,
   },
   {
     EmployeeID: 5,
-    Name: 'Miron Vitold',
-    Title: 'HR',
+    Name: 'Ali Isa',
+    Title: 'Resident',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Oge',
     EmployeeImage:
       avatar2,
   },
   {
     EmployeeID: 1,
-    Name: 'Nancy Davolio',
-    Title: 'Sales Representative',
+    Name: 'Edum David',
+    Title: 'Resident',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Oge',
     EmployeeImage:
       avatar2,
 
   },
   {
     EmployeeID: 2,
-    Name: 'Nasimiyu Danai',
-    Title: 'Marketing Head',
+    Name: 'Ntui Sydney',
+    Title: 'Intern',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Edum',
     EmployeeImage:
       avatar3,
   },
   {
     EmployeeID: 3,
     Name: 'Iulia Albu',
-    Title: 'HR',
+    Title: 'Intern',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Ali',
     EmployeeImage:
       avatar4,
   },
   {
     EmployeeID: 4,
-    Name: 'Siegbert Gottfried',
-    Title: 'Marketing Head',
+    Name: 'Ekpo Gottfried',
+    Title: 'Intern',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Ali',
     EmployeeImage:
       avatar2,
   },
   {
     EmployeeID: 5,
-    Name: 'Omar Darobe',
-    Title: 'HR',
+    Name: 'Omar Farouq',
+    Title: 'Intern',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Edum',
     EmployeeImage:
       avatar,
-  },
-  {
-    EmployeeID: 4,
-    Name: 'Penjani Inyene',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar,
-  },
-  {
-    EmployeeID: 5,
-    Name: 'Miron Vitold',
-    Title: 'HR',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-  },
-  {
-    EmployeeID: 1,
-    Name: 'Nancy Davolio',
-    Title: 'Sales Representative',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar,
-  },
-  {
-    EmployeeID: 2,
-    Name: 'Nasimiyu Danai',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar3,
   },
   {
     EmployeeID: 3,
-    Name: 'Iulia Albu',
-    Title: 'HR',
+    Name: 'Abu Julia',
+    Title: 'Nurse Manager',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Ali',
     EmployeeImage:
       avatar4,
   },
   {
     EmployeeID: 4,
-    Name: 'Siegbert Gottfried',
-    Title: 'Marketing Head',
+    Name: 'Siegbert Jane',
+    Title: 'Nurse Asst. Manager',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Abu',
     EmployeeImage:
       avatar2,
   },
   {
     EmployeeID: 5,
-    Name: 'Omar Darobe',
-    Title: 'HR',
+    Name: 'Omar Felicia',
+    Title: 'Nurse Practitioner',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Siegbert',
     EmployeeImage:
       avatar,
   },
   {
     EmployeeID: 4,
-    Name: 'Penjani Inyene',
-    Title: 'Marketing Head',
+    Name: 'Tomasi Ikem',
+    Title: 'Specialist Nurse',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Omar',
     EmployeeImage:
       avatar,
   },
   {
     EmployeeID: 5,
-    Name: 'Miron Vitold',
-    Title: 'HR',
+    Name: 'Ogunlaye Tope',
+    Title: 'Specialist Nurse',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Omar',
     EmployeeImage:
       avatar2,
   },
   {
     EmployeeID: 1,
-    Name: 'Nancy Davolio',
-    Title: 'Sales Representative',
+    Name: 'Bisi Davolio',
+    Title: 'Dietician',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Etim',
     EmployeeImage:
       avatar2,
 
   },
   {
     EmployeeID: 2,
-    Name: 'Nasimiyu Danai',
-    Title: 'Marketing Head',
+    Name: 'Akinola Daniel',
+    Title: 'Therapist',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Etim',
     EmployeeImage:
       avatar3,
   },
   {
     EmployeeID: 3,
-    Name: 'Iulia Albu',
-    Title: 'HR',
+    Name: 'Wilfred Tom',
+    Title: 'Pharmacist',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Etim',
     EmployeeImage:
       avatar4,
   },
   {
     EmployeeID: 4,
-    Name: 'Siegbert Gottfried',
-    Title: 'Marketing Head',
+    Name: 'Joe Cole',
+    Title: 'Physiotherapist',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Oge',
     EmployeeImage:
       avatar2,
   },
   {
     EmployeeID: 5,
-    Name: 'Omar Darobe',
-    Title: 'HR',
+    Name: 'Isil Darobe',
+    Title: 'Podiatrist',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Oge',
     EmployeeImage:
       avatar,
   },
   {
     EmployeeID: 4,
-    Name: 'Penjani Inyene',
-    Title: 'Marketing Head',
+    Name: 'Fred Tom',
+    Title: 'Pathologist',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Oge',
     EmployeeImage:
       avatar,
   },
   {
     EmployeeID: 5,
-    Name: 'Miron Vitold',
-    Title: 'HR',
+    Name: 'Owo Irem',
+    Title: 'Clinical Assistant',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Oge',
     EmployeeImage:
       avatar2,
   },
   {
     EmployeeID: 1,
-    Name: 'Nancy Davolio',
-    Title: 'Sales Representative',
+    Name: 'Shittu Tonia',
+    Title: 'Porter',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Owo',
     EmployeeImage:
       avatar2,
 
   },
   {
     EmployeeID: 2,
-    Name: 'Nasimiyu Danai',
-    Title: 'Marketing Head',
+    Name: 'Twisim Balogun',
+    Title: 'Ward Clerk',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Shittu',
     EmployeeImage:
       avatar3,
   },
   {
     EmployeeID: 3,
-    Name: 'Iulia Albu',
-    Title: 'HR',
+    Name: 'Ita Atim',
+    Title: 'Ward Clerk',
     HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
+    Country: 'Nigeria',
+    ReportsTo: 'Shittu',
     EmployeeImage:
       avatar4,
-  },
-  {
-    EmployeeID: 4,
-    Name: 'Siegbert Gottfried',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-  },
-  {
-    EmployeeID: 5,
-    Name: 'Omar Darobe',
-    Title: 'HR',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar,
-  },
-  {
-    EmployeeID: 4,
-    Name: 'Penjani Inyene',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar,
-  },
-  {
-    EmployeeID: 5,
-    Name: 'Miron Vitold',
-    Title: 'HR',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-  },
-  {
-    EmployeeID: 1,
-    Name: 'Nancy Davolio',
-    Title: 'Sales Representative',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-
-  },
-  {
-    EmployeeID: 2,
-    Name: 'Nasimiyu Danai',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar3,
-  },
-  {
-    EmployeeID: 3,
-    Name: 'Iulia Albu',
-    Title: 'HR',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar4,
-  },
-  {
-    EmployeeID: 4,
-    Name: 'Siegbert Gottfried',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-  },
-  {
-    EmployeeID: 5,
-    Name: 'Omar Darobe',
-    Title: 'HR',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar,
-  },
-  {
-    EmployeeID: 4,
-    Name: 'Penjani Inyene',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar,
-  },
-  {
-    EmployeeID: 5,
-    Name: 'Miron Vitold',
-    Title: 'HR',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-  },
-  {
-    EmployeeID: 1,
-    Name: 'Nancy Davolio',
-    Title: 'Sales Representative',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-
-  },
-  {
-    EmployeeID: 2,
-    Name: 'Nasimiyu Danai',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar3,
-  },
-  {
-    EmployeeID: 3,
-    Name: 'Iulia Albu',
-    Title: 'HR',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar4,
-  },
-  {
-    EmployeeID: 4,
-    Name: 'Siegbert Gottfried',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-  },
-  {
-    EmployeeID: 5,
-    Name: 'Omar Darobe',
-    Title: 'HR',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar,
-  },
-  {
-    EmployeeID: 4,
-    Name: 'Penjani Inyene',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar,
-  },
-  {
-    EmployeeID: 5,
-    Name: 'Miron Vitold',
-    Title: 'HR',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-  },
-  {
-    EmployeeID: 1,
-    Name: 'Nancy Davolio',
-    Title: 'Sales Representative',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-
-  },
-  {
-    EmployeeID: 2,
-    Name: 'Nasimiyu Danai',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar3,
-  },
-  {
-    EmployeeID: 3,
-    Name: 'Iulia Albu',
-    Title: 'HR',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar4,
-  },
-  {
-    EmployeeID: 4,
-    Name: 'Siegbert Gottfried',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-  },
-  {
-    EmployeeID: 5,
-    Name: 'Omar Darobe',
-    Title: 'HR',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar,
-  },
-  {
-    EmployeeID: 4,
-    Name: 'Penjani Inyene',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar,
-  },
-  {
-    EmployeeID: 5,
-    Name: 'Miron Vitold',
-    Title: 'HR',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-  },
-  {
-    EmployeeID: 1,
-    Name: 'Nancy Davolio',
-    Title: 'Sales Representative',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-
-  },
-  {
-    EmployeeID: 2,
-    Name: 'Nasimiyu Danai',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar3,
-  },
-  {
-    EmployeeID: 3,
-    Name: 'Iulia Albu',
-    Title: 'HR',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar4,
-  },
-  {
-    EmployeeID: 4,
-    Name: 'Siegbert Gottfried',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
-  },
-  {
-    EmployeeID: 5,
-    Name: 'Omar Darobe',
-    Title: 'HR',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar,
-  },
-  {
-    EmployeeID: 4,
-    Name: 'Penjani Inyene',
-    Title: 'Marketing Head',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar,
-  },
-  {
-    EmployeeID: 5,
-    Name: 'Miron Vitold',
-    Title: 'HR',
-    HireDate: '01/02/2021',
-    Country: 'USA',
-    ReportsTo: 'Carson',
-    EmployeeImage:
-      avatar2,
   },
 ];
 
-export const ordersData = [
+export const patientsData = [
   {
-    OrderID: 10248,
-    CustomerName: 'Vinet',
+    PatientID: 10248,
+    PatientName: 'Vincent',
+    TotalBills: 32.38,
+    Illness: 'Tuberculosis',
+    Status: 'pending',
+    StatusBg: '#FB9678',
+    PatientImage:
+    avatar3,
+  },
+  {
+    PatientID: 845954,
+    PatientName: 'Jie Yan',
+    TotalBills: 87.99,
+    Illness: 'Broken Leg',
+    Status: 'pending',
+    StatusBg: '#FB9678',
+    PatientImage:
+    avatar4,
+  },
+  {
+    PatientID: 874534,
+    PatientName: 'Danai',
+    TotalBills: 122.99,
+    Illness: 'Prostrate Cancer',
+    Status: 'canceled',
+    StatusBg: '#FF5C8E',
+    PatientImage:
+    avatar,
+  },
+  {
+    PatientID: 38489,
+    PatientName: 'Miron',
+    TotalBills: 87.99,
+    Illness: 'Brain Tumor',
+    Status: 'active',
+    StatusBg: '#03C9D7',
+    PatientImage:
+    avatar2,
+  },
+  {
+    PatientID: 24546,
+    PatientName: 'Frank',
+    TotalBills: 84.99,
+    Illness: 'Typhoid',
+    Status: 'complete',
+    StatusBg: '#8BE78B',
+    PatientImage:
+    avatar3,
+  },
+  {
+    PatientID: 845954,
+    PatientName: 'Jie Yan',
+    TotalBills: 87.99,
+    Illness: 'Ear Infection',
+    Status: 'pending',
+    StatusBg: '#FB9678',
+    PatientImage:
+    avatar4,
+  },
+  {
+    PatientID: 874534,
+    PatientName: 'Danai',
+    TotalBills: 122.99,
+    Illness: 'Ulcer',
+    Status: 'canceled',
+    StatusBg: '#FF5C8E',
+    PatientImage:
+    avatar,
+  },
+  {
+    PatientID: 38489,
+    PatientName: 'Miron',
+    TotalBills: 87.99,
+    Illness: 'Skin Rashes',
+    Status: 'active',
+    StatusBg: '#03C9D7',
+    PatientImage:
+    avatar2,
+  },
+  {
+    PatientID: 24546,
+    PatientName: 'Frank',
+    TotalBills: 84.99,
+    Illness: 'Tuberculosis',
+    Status: 'complete',
+    StatusBg: '#8BE78B',
+    PatientImage:
+    avatar2,
+  },
+  {
+    PatientID: 874534,
+    PatientName: 'Danai',
+    TotalBills: 122.99,
+    Illness: 'Brain Tumor',
+    Status: 'canceled',
+    StatusBg: '#FF5C8E',
+    PatientImage:
+    avatar3,
+  },
 
-    TotalAmount: 32.38,
-    OrderItems: 'Fresh Tomato',
-    Location: 'USA',
+  {
+    PatientID: 845954,
+    PatientName: 'Jie Yan',
+    TotalBills: 87.99,
+    Illness: 'Diabetics',
     Status: 'pending',
     StatusBg: '#FB9678',
-    ProductImage:
-      product6,
+    PatientImage:
+    avatar,
   },
   {
-    OrderID: 345653,
-    CustomerName: 'Carson Darrin',
-    TotalAmount: 56.34,
-    OrderItems: 'Butter Scotch',
-    Location: 'Delhi',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      product5,
+    PatientID: 874534,
+    PatientName: 'Danai',
+    TotalBills: 122.99,
+    Illness: 'Breast Cancer',
+    Status: 'canceled',
+    StatusBg: '#FF5C8E',
+    PatientImage:
+    avatar4,
   },
   {
-    OrderID: 390457,
-    CustomerName: 'Fran Perez',
-    TotalAmount: 93.31,
-    OrderItems: 'Candy Gucci',
-    Location: 'New York',
+    PatientID: 38489,
+    PatientName: 'Miron',
+    TotalBills: 87.99,
+    Illness: 'Typhoid',
     Status: 'active',
     StatusBg: '#03C9D7',
-    ProductImage:
-      product7,
+    PatientImage:
+    avatar3,
   },
   {
-    OrderID: 893486,
-    CustomerName: 'Anika Viseer',
-    TotalAmount: 93.31,
-    OrderItems: 'Night Lamp',
-    Location: 'Germany',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      product4,
-  },
-  {
-    OrderID: 748975,
-    CustomerName: 'Miron Vitold',
-    TotalAmount: 23.99,
-    OrderItems: 'Healthcare Erbology',
-    Location: 'Spain',
-    Status: 'rejected',
-    StatusBg: 'red',
-    ProductImage:
-      product1,
-  },
-  {
-    OrderID: 94757,
-    CustomerName: 'Omar Darobe',
-    TotalAmount: 95.99,
-    OrderItems: 'Makeup Lancome Rouge',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      product2,
-  },
-  {
-    OrderID: 944895,
-    CustomerName: 'Lulia albu',
-    TotalAmount: 17.99,
-    OrderItems: 'Skincare',
-    Location: 'USA',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      product3,
-  },
-  {
-    OrderID: 845954,
-    CustomerName: 'Penjani',
-    TotalAmount: 59.99,
-    OrderItems: 'Headphone',
-    Location: 'USA',
+    PatientID: 24546,
+    PatientName: 'Frank',
+    TotalBills: 84.99,
+    Illness: 'Kidney Failure',
     Status: 'complete',
     StatusBg: '#8BE78B',
-    ProductImage:
-      product4,
+    PatientImage:
+    avatar2,
   },
   {
-    OrderID: 845954,
-    CustomerName: 'Jie Yan',
-    TotalAmount: 87.99,
-    OrderItems: 'Shoes',
-    Location: 'USA',
-    Status: 'pending',
-    StatusBg: '#FB9678',
-    ProductImage:
-      'https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg',
-  },
-  {
-    OrderID: 874534,
-    CustomerName: 'Danai',
-    TotalAmount: 122.99,
-    OrderItems: 'Watch',
-    Location: 'USA',
+    PatientID: 874534,
+    PatientName: 'Danai',
+    TotalBills: 122.99,
+    Illness: 'STD (Gonorhhea)',
     Status: 'canceled',
     StatusBg: '#FF5C8E',
-    ProductImage:
-      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
-  },
-  {
-    OrderID: 38489,
-    CustomerName: 'Miron',
-    TotalAmount: 87.99,
-    OrderItems: 'Ice Cream',
-    Location: 'USA',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
-  },
-  {
-    OrderID: 24546,
-    CustomerName: 'Frank',
-    TotalAmount: 84.99,
-    OrderItems: 'Pan Cake',
-    Location: 'Delhi',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80',
-  },
-  {
-    OrderID: 874534,
-    CustomerName: 'Danai',
-    TotalAmount: 122.99,
-    OrderItems: 'Watch',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
-  },
-  {
-    OrderID: 10248,
-    CustomerName: 'Vinet',
-
-    TotalAmount: 32.38,
-    OrderItems: 'Fresh Tomato',
-    Location: 'USA',
-    Status: 'pending',
-    StatusBg: '#FB9678',
-    ProductImage:
-      product6,
-  },
-  {
-    OrderID: 345653,
-    CustomerName: 'Carson Darrin',
-    TotalAmount: 56.34,
-    OrderItems: 'Butter Scotch',
-    Location: 'Delhi',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      product5,
-  },
-  {
-    OrderID: 390457,
-    CustomerName: 'Fran Perez',
-    TotalAmount: 93.31,
-    OrderItems: 'Candy Gucci',
-    Location: 'New York',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      product7,
-  },
-  {
-    OrderID: 893486,
-    CustomerName: 'Anika Viseer',
-    TotalAmount: 93.31,
-    OrderItems: 'Night Lamp',
-    Location: 'Germany',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      product4,
-  },
-  {
-    OrderID: 748975,
-    CustomerName: 'Miron Vitold',
-    TotalAmount: 23.99,
-    OrderItems: 'Healthcare Erbology',
-    Location: 'Spain',
-    Status: 'rejected',
-    StatusBg: 'red',
-    ProductImage:
-      product1,
-  },
-  {
-    OrderID: 94757,
-    CustomerName: 'Omar Darobe',
-    TotalAmount: 95.99,
-    OrderItems: 'Makeup Lancome Rouge',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      product2,
-  },
-  {
-    OrderID: 944895,
-    CustomerName: 'Lulia albu',
-    TotalAmount: 17.99,
-    OrderItems: 'Skincare',
-    Location: 'USA',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      product3,
-  },
-  {
-    OrderID: 845954,
-    CustomerName: 'Penjani',
-    TotalAmount: 59.99,
-    OrderItems: 'Headphone',
-    Location: 'USA',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      product4,
-  },
-  {
-    OrderID: 845954,
-    CustomerName: 'Jie Yan',
-    TotalAmount: 87.99,
-    OrderItems: 'Shoes',
-    Location: 'USA',
-    Status: 'pending',
-    StatusBg: '#FB9678',
-    ProductImage:
-      'https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg',
-  },
-  {
-    OrderID: 874534,
-    CustomerName: 'Danai',
-    TotalAmount: 122.99,
-    OrderItems: 'Watch',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
-  },
-  {
-    OrderID: 38489,
-    CustomerName: 'Miron',
-    TotalAmount: 87.99,
-    OrderItems: 'Ice Cream',
-    Location: 'USA',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
-  },
-  {
-    OrderID: 24546,
-    CustomerName: 'Frank',
-    TotalAmount: 84.99,
-    OrderItems: 'Pan Cake',
-    Location: 'Delhi',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80',
-  },
-  {
-    OrderID: 874534,
-    CustomerName: 'Danai',
-    TotalAmount: 122.99,
-    OrderItems: 'Watch',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
-  },
-  {
-    OrderID: 10248,
-    CustomerName: 'Vinet',
-
-    TotalAmount: 32.38,
-    OrderItems: 'Fresh Tomato',
-    Location: 'USA',
-    Status: 'pending',
-    StatusBg: '#FB9678',
-    ProductImage:
-      product6,
-  },
-  {
-    OrderID: 345653,
-    CustomerName: 'Carson Darrin',
-    TotalAmount: 56.34,
-    OrderItems: 'Butter Scotch',
-    Location: 'Delhi',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      product5,
-  },
-  {
-    OrderID: 390457,
-    CustomerName: 'Fran Perez',
-    TotalAmount: 93.31,
-    OrderItems: 'Candy Gucci',
-    Location: 'New York',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      product7,
-  },
-  {
-    OrderID: 893486,
-    CustomerName: 'Anika Viseer',
-    TotalAmount: 93.31,
-    OrderItems: 'Night Lamp',
-    Location: 'Germany',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      product4,
-  },
-  {
-    OrderID: 748975,
-    CustomerName: 'Miron Vitold',
-    TotalAmount: 23.99,
-    OrderItems: 'Healthcare Erbology',
-    Location: 'Spain',
-    Status: 'rejected',
-    StatusBg: 'red',
-    ProductImage:
-      product1,
-  },
-  {
-    OrderID: 94757,
-    CustomerName: 'Omar Darobe',
-    TotalAmount: 95.99,
-    OrderItems: 'Makeup Lancome Rouge',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      product2,
-  },
-  {
-    OrderID: 944895,
-    CustomerName: 'Lulia albu',
-    TotalAmount: 17.99,
-    OrderItems: 'Skincare',
-    Location: 'USA',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      product3,
-  },
-  {
-    OrderID: 845954,
-    CustomerName: 'Penjani',
-    TotalAmount: 59.99,
-    OrderItems: 'Headphone',
-    Location: 'USA',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      product4,
-  },
-  {
-    OrderID: 845954,
-    CustomerName: 'Jie Yan',
-    TotalAmount: 87.99,
-    OrderItems: 'Shoes',
-    Location: 'USA',
-    Status: 'pending',
-    StatusBg: '#FB9678',
-    ProductImage:
-      'https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg',
-  },
-  {
-    OrderID: 874534,
-    CustomerName: 'Danai',
-    TotalAmount: 122.99,
-    OrderItems: 'Watch',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
-  },
-  {
-    OrderID: 38489,
-    CustomerName: 'Miron',
-    TotalAmount: 87.99,
-    OrderItems: 'Ice Cream',
-    Location: 'USA',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
-  },
-  {
-    OrderID: 24546,
-    CustomerName: 'Frank',
-    TotalAmount: 84.99,
-    OrderItems: 'Pan Cake',
-    Location: 'Delhi',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80',
-  },
-  {
-    OrderID: 874534,
-    CustomerName: 'Danai',
-    TotalAmount: 122.99,
-    OrderItems: 'Watch',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
-  },
-  {
-    OrderID: 10248,
-    CustomerName: 'Vinet',
-
-    TotalAmount: 32.38,
-    OrderItems: 'Fresh Tomato',
-    Location: 'USA',
-    Status: 'pending',
-    StatusBg: '#FB9678',
-    ProductImage:
-      product6,
-  },
-  {
-    OrderID: 345653,
-    CustomerName: 'Carson Darrin',
-    TotalAmount: 56.34,
-    OrderItems: 'Butter Scotch',
-    Location: 'Delhi',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      product5,
-  },
-  {
-    OrderID: 390457,
-    CustomerName: 'Fran Perez',
-    TotalAmount: 93.31,
-    OrderItems: 'Candy Gucci',
-    Location: 'New York',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      product7,
-  },
-  {
-    OrderID: 893486,
-    CustomerName: 'Anika Viseer',
-    TotalAmount: 93.31,
-    OrderItems: 'Night Lamp',
-    Location: 'Germany',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      product4,
-  },
-  {
-    OrderID: 748975,
-    CustomerName: 'Miron Vitold',
-    TotalAmount: 23.99,
-    OrderItems: 'Healthcare Erbology',
-    Location: 'Spain',
-    Status: 'rejected',
-    StatusBg: 'red',
-    ProductImage:
-      product1,
-  },
-  {
-    OrderID: 94757,
-    CustomerName: 'Omar Darobe',
-    TotalAmount: 95.99,
-    OrderItems: 'Makeup Lancome Rouge',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      product2,
-  },
-  {
-    OrderID: 944895,
-    CustomerName: 'Lulia albu',
-    TotalAmount: 17.99,
-    OrderItems: 'Skincare',
-    Location: 'USA',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      product3,
-  },
-  {
-    OrderID: 845954,
-    CustomerName: 'Penjani',
-    TotalAmount: 59.99,
-    OrderItems: 'Headphone',
-    Location: 'USA',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      product4,
-  },
-  {
-    OrderID: 845954,
-    CustomerName: 'Jie Yan',
-    TotalAmount: 87.99,
-    OrderItems: 'Shoes',
-    Location: 'USA',
-    Status: 'pending',
-    StatusBg: '#FB9678',
-    ProductImage:
-      'https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg',
-  },
-  {
-    OrderID: 874534,
-    CustomerName: 'Danai',
-    TotalAmount: 122.99,
-    OrderItems: 'Watch',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
-  },
-  {
-    OrderID: 38489,
-    CustomerName: 'Miron',
-    TotalAmount: 87.99,
-    OrderItems: 'Ice Cream',
-    Location: 'USA',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
-  },
-  {
-    OrderID: 24546,
-    CustomerName: 'Frank',
-    TotalAmount: 84.99,
-    OrderItems: 'Pan Cake',
-    Location: 'Delhi',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80',
-  },
-  {
-    OrderID: 874534,
-    CustomerName: 'Danai',
-    TotalAmount: 122.99,
-    OrderItems: 'Watch',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
-  },
-  {
-    OrderID: 10248,
-    CustomerName: 'Vinet',
-
-    TotalAmount: 32.38,
-    OrderItems: 'Fresh Tomato',
-    Location: 'USA',
-    Status: 'pending',
-    StatusBg: '#FB9678',
-    ProductImage:
-      product6,
-  },
-  {
-    OrderID: 345653,
-    CustomerName: 'Carson Darrin',
-    TotalAmount: 56.34,
-    OrderItems: 'Butter Scotch',
-    Location: 'Delhi',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      product5,
-  },
-  {
-    OrderID: 390457,
-    CustomerName: 'Fran Perez',
-    TotalAmount: 93.31,
-    OrderItems: 'Candy Gucci',
-    Location: 'New York',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      product7,
-  },
-  {
-    OrderID: 893486,
-    CustomerName: 'Anika Viseer',
-    TotalAmount: 93.31,
-    OrderItems: 'Night Lamp',
-    Location: 'Germany',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      product4,
-  },
-  {
-    OrderID: 748975,
-    CustomerName: 'Miron Vitold',
-    TotalAmount: 23.99,
-    OrderItems: 'Healthcare Erbology',
-    Location: 'Spain',
-    Status: 'rejected',
-    StatusBg: 'red',
-    ProductImage:
-      product1,
-  },
-  {
-    OrderID: 94757,
-    CustomerName: 'Omar Darobe',
-    TotalAmount: 95.99,
-    OrderItems: 'Makeup Lancome Rouge',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      product2,
-  },
-  {
-    OrderID: 944895,
-    CustomerName: 'Lulia albu',
-    TotalAmount: 17.99,
-    OrderItems: 'Skincare',
-    Location: 'USA',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      product3,
-  },
-  {
-    OrderID: 845954,
-    CustomerName: 'Penjani',
-    TotalAmount: 59.99,
-    OrderItems: 'Headphone',
-    Location: 'USA',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      product4,
-  },
-  {
-    OrderID: 845954,
-    CustomerName: 'Jie Yan',
-    TotalAmount: 87.99,
-    OrderItems: 'Shoes',
-    Location: 'USA',
-    Status: 'pending',
-    StatusBg: '#FB9678',
-    ProductImage:
-      'https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg',
-  },
-  {
-    OrderID: 874534,
-    CustomerName: 'Danai',
-    TotalAmount: 122.99,
-    OrderItems: 'Watch',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
-  },
-  {
-    OrderID: 38489,
-    CustomerName: 'Miron',
-    TotalAmount: 87.99,
-    OrderItems: 'Ice Cream',
-    Location: 'USA',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
-  },
-  {
-    OrderID: 24546,
-    CustomerName: 'Frank',
-    TotalAmount: 84.99,
-    OrderItems: 'Pan Cake',
-    Location: 'Delhi',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80',
-  },
-  {
-    OrderID: 874534,
-    CustomerName: 'Danai',
-    TotalAmount: 122.99,
-    OrderItems: 'Watch',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
+    PatientImage:
+      avatar,
   },
 ];
 
@@ -2887,7 +1299,7 @@ export const scheduleData = [
   {
     Id: 1,
     Subject: 'Explosion of Betelgeuse Star',
-    Location: 'Space Center USA',
+    Location: 'Space Center Nigeria',
     StartTime: '2021-01-10T04:00:00.000Z',
     EndTime: '2021-01-10T05:30:00.000Z',
     CategoryColor: '#1aaa55',
@@ -2903,7 +1315,7 @@ export const scheduleData = [
   {
     Id: 3,
     Subject: 'Blue Moon Eclipse',
-    Location: 'Space Center USA',
+    Location: 'Space Center Nigeria',
     StartTime: '2021-01-12T04:00:00.000Z',
     EndTime: '2021-01-12T05:30:00.000Z',
     CategoryColor: '#7fa900',
@@ -2911,7 +1323,7 @@ export const scheduleData = [
   {
     Id: 4,
     Subject: 'Meteor Showers in 2021',
-    Location: 'Space Center USA',
+    Location: 'Space Center Nigeria',
     StartTime: '2021-01-13T07:30:00.000Z',
     EndTime: '2021-01-13T09:00:00.000Z',
     CategoryColor: '#ea7a57',
@@ -2919,7 +1331,7 @@ export const scheduleData = [
   {
     Id: 5,
     Subject: 'Milky Way as Melting pot',
-    Location: 'Space Center USA',
+    Location: 'Space Center Nigeria',
     StartTime: '2021-01-14T06:30:00.000Z',
     EndTime: '2021-01-14T08:30:00.000Z',
     CategoryColor: '#00bdae',
@@ -2943,7 +1355,7 @@ export const scheduleData = [
   {
     Id: 8,
     Subject: 'Life on Mars',
-    Location: 'Space Center USA',
+    Location: 'Space Center Nigeria',
     StartTime: '2021-01-16T03:30:00.000Z',
     EndTime: '2021-01-16T04:30:00.000Z',
     CategoryColor: '#357cd2',
@@ -2951,7 +1363,7 @@ export const scheduleData = [
   {
     Id: 9,
     Subject: 'Alien Civilization',
-    Location: 'Space Center USA',
+    Location: 'Space Center Nigeria',
     StartTime: '2021-01-18T05:30:00.000Z',
     EndTime: '2021-01-18T07:30:00.000Z',
     CategoryColor: '#7fa900',
@@ -2983,7 +1395,7 @@ export const scheduleData = [
   {
     Id: 13,
     Subject: 'Myths of Andromeda Galaxy',
-    Location: 'Space Center USA',
+    Location: 'Space Center Nigeria',
     StartTime: '2021-01-06T05:00:00.000Z',
     EndTime: '2021-01-06T07:00:00.000Z',
     CategoryColor: '#1aaa55',
@@ -2991,7 +1403,7 @@ export const scheduleData = [
   {
     Id: 14,
     Subject: 'Aliens vs Humans',
-    Location: 'Research Center of USA',
+    Location: 'Research Center of Nigeria',
     StartTime: '2021-01-05T04:30:00.000Z',
     EndTime: '2021-01-05T06:00:00.000Z',
     CategoryColor: '#357cd2',
@@ -3015,7 +1427,7 @@ export const scheduleData = [
   {
     Id: 17,
     Subject: 'The Cycle of Seasons',
-    Location: 'Research Center of USA',
+    Location: 'Research Center of Nigeria',
     StartTime: '2021-01-11T00:00:00.000Z',
     EndTime: '2021-01-11T02:00:00.000Z',
     CategoryColor: '#00bdae',
@@ -3023,7 +1435,7 @@ export const scheduleData = [
   {
     Id: 18,
     Subject: 'Space Galaxies and Planets',
-    Location: 'Space Center USA',
+    Location: 'Space Center Nigeria',
     StartTime: '2021-01-11T11:30:00.000Z',
     EndTime: '2021-01-11T13:00:00.000Z',
     CategoryColor: '#f57f17',
@@ -3039,7 +1451,7 @@ export const scheduleData = [
   {
     Id: 20,
     Subject: 'Alien Civilization',
-    Location: 'Space Center USA',
+    Location: 'Space Center Nigeria',
     StartTime: '2021-01-14T10:30:00.000Z',
     EndTime: '2021-01-14T12:30:00.000Z',
     CategoryColor: '#ea7a57',
@@ -3047,7 +1459,7 @@ export const scheduleData = [
   {
     Id: 21,
     Subject: 'Alien Civilization',
-    Location: 'Space Center USA',
+    Location: 'Space Center Nigeria',
     StartTime: '2021-01-10T08:30:00.000Z',
     EndTime: '2021-01-10T10:30:00.000Z',
     CategoryColor: '#ea7a57',
@@ -3055,7 +1467,7 @@ export const scheduleData = [
   {
     Id: 22,
     Subject: 'The Cycle of Seasons',
-    Location: 'Research Center of USA',
+    Location: 'Research Center of Nigeria',
     StartTime: '2021-01-12T09:00:00.000Z',
     EndTime: '2021-01-12T10:30:00.000Z',
     CategoryColor: '#00bdae',
