@@ -454,12 +454,8 @@ export const links = [
         icon: <AiOutlineCalendar />,
       },
       {
-        name: 'task-manager',
+        name: 'tasks-manager',
         icon: <BsKanban />,
-      },
-      {
-        name: 'editor',
-        icon: <FiEdit />,
       },
       {
         name: 'color-picker',
@@ -822,7 +818,7 @@ export const userProfileData = [
 export const patientsGrid = [
   { type: 'checkbox', width: '50' },
 
-   {
+  {
     width: '150',
     template: patientGridImage,
     textAlign: 'Center',
@@ -1150,7 +1146,7 @@ export const patientsData = [
     Status: 'pending',
     StatusBg: '#FB9678',
     PatientImage:
-    avatar3,
+      avatar3,
   },
   {
     PatientID: 845954,
@@ -1160,7 +1156,7 @@ export const patientsData = [
     Status: 'pending',
     StatusBg: '#FB9678',
     PatientImage:
-    avatar4,
+      avatar4,
   },
   {
     PatientID: 874534,
@@ -1170,7 +1166,7 @@ export const patientsData = [
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     PatientImage:
-    avatar,
+      avatar,
   },
   {
     PatientID: 38489,
@@ -1180,7 +1176,7 @@ export const patientsData = [
     Status: 'active',
     StatusBg: '#03C9D7',
     PatientImage:
-    avatar2,
+      avatar2,
   },
   {
     PatientID: 24546,
@@ -1190,7 +1186,7 @@ export const patientsData = [
     Status: 'complete',
     StatusBg: '#8BE78B',
     PatientImage:
-    avatar3,
+      avatar3,
   },
   {
     PatientID: 845954,
@@ -1200,7 +1196,7 @@ export const patientsData = [
     Status: 'pending',
     StatusBg: '#FB9678',
     PatientImage:
-    avatar4,
+      avatar4,
   },
   {
     PatientID: 874534,
@@ -1210,7 +1206,7 @@ export const patientsData = [
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     PatientImage:
-    avatar,
+      avatar,
   },
   {
     PatientID: 38489,
@@ -1220,7 +1216,7 @@ export const patientsData = [
     Status: 'active',
     StatusBg: '#03C9D7',
     PatientImage:
-    avatar2,
+      avatar2,
   },
   {
     PatientID: 24546,
@@ -1230,7 +1226,7 @@ export const patientsData = [
     Status: 'complete',
     StatusBg: '#8BE78B',
     PatientImage:
-    avatar2,
+      avatar2,
   },
   {
     PatientID: 874534,
@@ -1240,7 +1236,7 @@ export const patientsData = [
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     PatientImage:
-    avatar3,
+      avatar3,
   },
 
   {
@@ -1251,7 +1247,7 @@ export const patientsData = [
     Status: 'pending',
     StatusBg: '#FB9678',
     PatientImage:
-    avatar,
+      avatar,
   },
   {
     PatientID: 874534,
@@ -1261,7 +1257,7 @@ export const patientsData = [
     Status: 'canceled',
     StatusBg: '#FF5C8E',
     PatientImage:
-    avatar4,
+      avatar4,
   },
   {
     PatientID: 38489,
@@ -1271,7 +1267,7 @@ export const patientsData = [
     Status: 'active',
     StatusBg: '#03C9D7',
     PatientImage:
-    avatar3,
+      avatar3,
   },
   {
     PatientID: 24546,
@@ -1281,7 +1277,7 @@ export const patientsData = [
     Status: 'complete',
     StatusBg: '#8BE78B',
     PatientImage:
-    avatar2,
+      avatar2,
   },
   {
     PatientID: 874534,

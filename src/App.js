@@ -9,6 +9,7 @@ import { AdminDashboard } from './containers/AdminDashboard';
 import { Patients } from './containers/Patients';
 import { Employees } from './containers/Employees';
 import { Appointments } from './containers/Appointments';
+import { TasksManager } from './containers/TaskManager';
 import "./App.css";
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
                 <Route path="/employees" element={<Employees />} />
                 <Route path="/patients" element={<Patients />} />
                 <Route path="/appointments" element={<Appointments />} />
+                <Route path="/tasks-manager" element={<TasksManager />} />
               </Routes>
             </div>
           </div>
