@@ -22,7 +22,7 @@ const AdminDashboard = () => {
         </div>
         <div className="flex m-3 flex-wrap justify-center gap-1 items-center">
           {billsData.map((item) => (
-            <div key={item.title} className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56 m-auto p-4 pt-9 rounded-2xl">
+            <div key={item.title} className="bg-white dark:text-gray-200 dark:bg-main-dark-bg md:w-56 m-auto p-4 pt-9 rounded-2xl">
               <button type="button" className="text-2xl opacity-0.9 rounded-full p-4 hover:drop-shadow-xl" style={{ color: item.iconColor, backgroundColor: item.iconBg }}>
                 {item.icon}
               </button>

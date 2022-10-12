@@ -1,8 +1,7 @@
 import React from 'react';
 import { AiOutlineCalendar, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
 import { FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
-import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
-import { BiColorFill } from 'react-icons/bi';
+import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft, BsFillChatSquareDotsFill } from 'react-icons/bs';
 import { IoMdContacts } from 'react-icons/io';
 import { RiAdminFill, RiContactsLine, RiStockLine } from 'react-icons/ri';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
@@ -458,8 +457,8 @@ export const links = [
         icon: <BsKanban />,
       },
       {
-        name: 'color-picker',
-        icon: <BiColorFill />,
+        name: 'chat',
+        icon: <BsFillChatSquareDotsFill />,
       },
     ],
   },

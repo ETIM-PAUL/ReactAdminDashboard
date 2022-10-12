@@ -10,6 +10,7 @@ export const ContextProvider = ({ children }) => {
     userProfile: false,
     notification: false,
     activeMenu: true,
+    theme: "light",
     screenSize: undefined,
   });
 

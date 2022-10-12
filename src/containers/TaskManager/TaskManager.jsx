@@ -5,7 +5,7 @@ import { Header } from '../../components/Header'
 
 const TasksManager = () => {
   return (
-    <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl" >
+    <div className="m-2 md:m-10 p-2 md:p-10 bg-white dark:bg-main-dark-bg rounded-3xl" >
       <Header title="Tasks Manager" />
       <KanbanComponent id="kanban" dataSource={kanbanData} cardSettings={{ contentField: 'Summary', headerField: 'Id' }} keyField="Status">
         <ColumnsDirective>

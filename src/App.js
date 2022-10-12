@@ -9,14 +9,15 @@ import { AdminDashboard } from './containers/AdminDashboard';
 import { Patients } from './containers/Patients';
 import { Employees } from './containers/Employees';
 import { Appointments } from './containers/Appointments';
+import { HiSun, HiMoon } from "react-icons/hi";
 import { TasksManager } from './containers/TaskManager';
 import "./App.css";
 
 function App() {
-  const { state } = useStateContext()
-  const { activeMenu } = state
+  const { state, dispatch } = useStateContext()
+  const { activeMenu, theme } = state
   return (
-    <div>
+    <div className={theme === 'dark' ? 'dark' : ''}>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           <div
@@ -25,10 +26,33 @@ function App() {
               zIndex: '1000',
             }}
           >
-            <TooltipComponent content="Settings" position="Top">
-              <button type="button" className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white rounded-[50%]" style={{ backgroundColor: 'blue' }}>
-                <FiSettings />
-              </button>
+            <TooltipComponent content="Theme Settings" position="Top">
+              <div className="mt-2 py-2 px-3 rounded-2xl bg-gray-500 dark:bg-main-dark-bg">
+                <div className="flex gap-3">
+                  <span
+                    className={`font-semibold flex items-center ${theme === "light" ? "" : "font-dark"}`}
+                  >
+                    {theme === "light" ? "Light mode" : "Dark mode"}
+                  </span>
+                  <button
+                    className={`mode-button flex justify-between items-center ${theme === "light" ? "light-mood-button" : "dark-mood-button"}`}
+                  >
+                    <HiSun
+                      className={`text-4xl ${theme === "light" ? "sun-light" : "sun-dark"}`}
+                      onClick={() => {
+                        dispatch({ type: "setTheme", payload: "light" })
+
+                      }}
+                    />
+                    <HiMoon
+                      className={`text-4xl ${theme === "light" ? "moon-light" : "moon-dark"}`}
+                      onClick={() =>
+                        dispatch({ type: "setTheme", payload: "dark" })
+                      }
+                    />
+                  </button>
+                </div>
+              </div>
             </TooltipComponent>
           </div>
           {activeMenu ? (
@@ -38,7 +62,7 @@ function App() {
               <SideBar />
             </div>
           )}
-          <div className={`dark:bg-main-bg bg-main-bg min-h-10 w-full ${activeMenu ? 'md:ml-72 ' : 'flex-2'}`}>
+          <div className={`dark:bg-secondary-dark-bg bg-main-bg min-h-10 w-full ${activeMenu ? 'md:ml-72 ' : 'flex-2'}`}>
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar full"><NavBar /></div>
 
             <div>

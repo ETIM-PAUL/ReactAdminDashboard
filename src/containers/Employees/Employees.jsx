@@ -5,8 +5,8 @@ import { Header } from '../../components/Header'
 
 const Employees = () => {
   return (
-    <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl" >
-      <Header category="HosPiD" title="Employees" />
+    <div className="m-2 md:m-10 p-2 md:p-10 bg-white dark:bg-main-dark-bg rounded-3xl" >
+      <Header title="Employees" />
       <GridComponent dataSource={employeesData} allowPaging allowSorting toolbar={['Search']} editSettings={{ allowDeleting: true, allowEditing: true }} pageSettings={{ pageSize: 6 }} width="auto">
         <ColumnsDirective>
           {employeesGrid.map((item, index) =>

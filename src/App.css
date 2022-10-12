@@ -9,6 +9,51 @@
   z-index: 10000;
 }
 
+.sun-light {
+  color: #1364e9;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.sun-dark {
+  color: #1364e9;
+  background-color: #23262c;
+  border-radius: 50%;
+}
+
+.moon-light {
+  color: rgba(15, 20, 25, 0.54);
+}
+
+.moon-dark {
+  color: #1364e9;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.mode-button {
+  border-radius: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 40px;
+  width: 89px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.light-mood-button {
+  background-color: #d2d9e9;
+}
+
+.dark-mood-button {
+  background-color: #23262c;
+}
+
+.light-mood-button:focus {
+  outline: none;
+  /* Not ideal for accessibility */
+}
+
 @media screen and (max-width:800px) {
   .sidebar {
     z-index: 10000000;
