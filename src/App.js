@@ -8,6 +8,7 @@ import { useStateContext } from './contexts/'
 import { AdminDashboard } from './containers/AdminDashboard';
 import { Patients } from './containers/Patients';
 import { Employees } from './containers/Employees';
+import { Appointments } from './containers/Appointments';
 import "./App.css";
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
                 <Route path="/admin" element={<AdminDashboard />} />
                 <Route path="/employees" element={<Employees />} />
                 <Route path="/patients" element={<Patients />} />
+                <Route path="/appointments" element={<Appointments />} />
               </Routes>
             </div>
           </div>
