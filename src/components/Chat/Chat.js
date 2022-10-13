@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 const Chat = () => {
   return (
-    <div>Chat</div>
+    <div>
+      Chater
+    </div>
   )
 }
 
-export { Chat }
+const ChatMemo = memo(Chat)
+export { ChatMemo as Chat }

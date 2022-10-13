@@ -196,7 +196,7 @@ export const links = [
         icon: <BsKanban />,
       },
       {
-        name: 'chat',
+        name: 'messages',
         icon: <BsFillChatSquareDotsFill />,
       },
     ],
@@ -210,6 +210,7 @@ export const chatData = [
     message: 'Roman Joined the Team!',
     desc: 'Congratulate him',
     time: '9:08 AM',
+    name: 'Rome',
   },
   {
     image:
@@ -217,6 +218,8 @@ export const chatData = [
     message: 'New message received',
     desc: 'Salma sent you new message',
     time: '11:56 AM',
+    name: 'Fred',
+
   },
   {
     image:
@@ -224,6 +227,8 @@ export const chatData = [
     message: 'New Payment received',
     desc: 'Check your earnings',
     time: '4:39 AM',
+    name: 'Iro',
+
   },
   {
     image:
@@ -231,6 +236,80 @@ export const chatData = [
     message: 'Jolly completed tasks',
     desc: 'Assign her new tasks',
     time: '1:12 AM',
+    name: 'Tommy',
+
+  },
+  {
+    image:
+      avatar2,
+    message: 'Roman Joined the Team!',
+    desc: 'Congratulate him',
+    time: '9:08 AM',
+    name: 'Sally',
+
+  },
+  {
+    image:
+      avatar3,
+    message: 'New message received',
+    desc: 'Salma sent you new message',
+    time: '11:56 AM',
+    name: 'Helena',
+
+  },
+  {
+    image:
+      avatar4,
+    message: 'New Payment received',
+    desc: 'Check your earnings',
+    time: '4:39 AM',
+    name: 'Kobe',
+
+  },
+  {
+    image:
+      avatar,
+    message: 'Jolly completed tasks',
+    desc: 'Assign her new tasks',
+    time: '1:12 AM',
+    name: 'Salma',
+
+  },
+  {
+    image:
+      avatar2,
+    message: 'Roman Joined the Team!',
+    desc: 'Congratulate him',
+    time: '9:08 AM',
+    name: 'Esor',
+
+  },
+  {
+    image:
+      avatar3,
+    message: 'New message received',
+    desc: 'Salma sent you new message',
+    time: '11:56 AM',
+    name: 'Legion',
+
+  },
+  {
+    image:
+      avatar4,
+    message: 'New Payment received',
+    desc: 'Check your earnings',
+    time: '4:39 AM',
+    name: 'Jahmal',
+
+  },
+  {
+    image:
+      avatar,
+    message: 'Jolly completed tasks',
+    desc: 'Assign her new tasks',
+    time: '1:12 AM',
+    name: 'Teddy',
+
   },
 ];
 
@@ -271,84 +350,6 @@ export const billsData = [
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
     pcColor: 'red-600',
-  },
-];
-
-export const recentTransactions = [
-  {
-    icon: <BsCurrencyDollar />,
-    amount: '+$350',
-    title: 'Paypal Transfer',
-    desc: 'Money Added',
-    iconColor: '#03C9D7',
-    iconBg: '#E5FAFB',
-    pcColor: 'green-600',
-  },
-  {
-    icon: <BsShield />,
-    amount: '-$560',
-    desc: 'Bill Payment',
-    title: 'Wallet',
-    iconColor: 'rgb(0, 194, 146)',
-    iconBg: 'rgb(235, 250, 242)',
-    pcColor: 'red-600',
-  },
-  {
-    icon: <FiCreditCard />,
-    amount: '+$350',
-    title: 'Credit Card',
-    desc: 'Money reversed',
-    iconColor: 'rgb(255, 244, 229)',
-    iconBg: 'rgb(254, 201, 15)',
-
-    pcColor: 'green-600',
-  },
-  {
-    icon: <TiTick />,
-    amount: '+$350',
-    title: 'Bank Transfer',
-    desc: 'Money Added',
-
-    iconColor: 'rgb(228, 106, 118)',
-    iconBg: 'rgb(255, 244, 229)',
-    pcColor: 'green-600',
-  },
-  {
-    icon: <BsCurrencyDollar />,
-    amount: '-$50',
-    percentage: '+38%',
-    title: 'Refund',
-    desc: 'Payment Sent',
-    iconColor: '#03C9D7',
-    iconBg: '#E5FAFB',
-    pcColor: 'red-600',
-  },
-];
-
-export const weeklyStats = [
-  {
-    icon: <FiShoppingCart />,
-    amount: '-$560',
-    title: 'Top Sales',
-    desc: 'Johnathan Doe',
-    iconBg: '#FB9678',
-    pcColor: 'red-600',
-  },
-  {
-    icon: <FiStar />,
-    amount: '-$560',
-    title: 'Best Seller',
-    desc: 'MaterialPro Admin',
-    iconBg: 'rgb(254, 201, 15)',
-    pcColor: 'red-600',
-  },
-  {
-    icon: <BsChatLeft />,
-    amount: '+$560',
-    title: 'Most Commented',
-    desc: 'Ample Admin',
-    iconBg: '#00C292',
-    pcColor: 'green-600',
   },
 ];
 
