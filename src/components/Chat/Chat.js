@@ -22,7 +22,9 @@ const Chat = () => {
       message: message,
       time: time.getHours() + ':' + time.getMinutes()
     }
-    sentMessages.push(messageObj)
+    if (message.length > 0) {
+      sentMessages.push(messageObj)
+    }
     setMessage("")
   }
 
@@ -39,13 +41,13 @@ const Chat = () => {
         ))}
         <br />
         <br />
-        <div className='inline-block float-right'>
+        <div className='grid float-right'>
           {sentMessages.map((message, index) => (
-            <div key={index} className="grid">
+            <div key={index} className="grid justify-self-end">
               <div className='bg-main-bg dark:bg-gray-500 shadow-md w-fit p-2 rounded-md mb-1 mx-4 ' >
                 <p className='text-sm font-normal dark:text-[white]'>{message.message}</p>
               </div>
-              <p className='text-[10px] pl-1 dark:text-[#fff] mb-3 mx-4'>{message.time}</p>
+              <p className='text-[10px] text-end pl-1 dark:text-[#fff] mb-3 mx-4'>{message.time}</p>
             </div>
           ))}
 
