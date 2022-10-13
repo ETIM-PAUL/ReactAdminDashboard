@@ -18,6 +18,12 @@ export const StateReducer = (state, { type, payload }) => {
         theme: payload,
       }
     }
+    case "showDropDown": {
+      return {
+        ...state,
+        dropDown: payload,
+      }
+    }
     default: {
       throw new Error(`Unhandled action type: ${type}`);
     }

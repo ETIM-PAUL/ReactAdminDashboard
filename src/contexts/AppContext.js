@@ -5,10 +5,7 @@ const StateContext = createContext()
 
 export const ContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(StateReducer, {
-    chat: false,
-    cart: false,
-    userProfile: false,
-    notification: false,
+    dropDown: "",
     activeMenu: true,
     theme: "light",
     screenSize: undefined,
