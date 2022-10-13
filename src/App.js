@@ -12,6 +12,7 @@ import { Appointments } from './containers/Appointments';
 import { HiSun, HiMoon } from "react-icons/hi";
 import { TasksManager } from './containers/TaskManager';
 import "./App.css";
+import { Footer } from './components/Footer';
 
 function App() {
   const { state, dispatch } = useStateContext()
@@ -27,10 +28,10 @@ function App() {
             }}
           >
             <TooltipComponent content="Theme Settings" position="Top">
-              <div className="mt-2 py-2 px-3 rounded-2xl bg-gray-500 dark:bg-main-dark-bg">
+              <div className="mt-2 py-2 px-3 rounded-2xl bg-gray-500 dark:bg-half-transparent">
                 <div className="flex gap-3">
                   <span
-                    className={`font-semibold flex items-center ${theme === "light" ? "" : "font-dark"}`}
+                    className={`font-semibold flex items-center ${theme === "light" ? "text-[black]" : "text-[white]"}`}
                   >
                     {theme === "light" ? "Light mode" : "Dark mode"}
                   </span>
@@ -62,10 +63,10 @@ function App() {
               <SideBar />
             </div>
           )}
-          <div className={`dark:bg-secondary-dark-bg bg-main-bg min-h-10 w-full ${activeMenu ? 'md:ml-72 ' : 'flex-2'}`}>
-            <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar full"><NavBar /></div>
+          <div className={`dark:bg-secondary-dark-bg bg-main-bg  w-full ${activeMenu ? 'md:ml-72 ' : 'flex-2'}`}>
+            <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full"><NavBar /></div>
 
-            <div>
+            <div className='mt-24 md:mt-0'>
               <Routes>
                 <Route path="/" element={<AdminDashboard />} />
                 <Route path="/admin" element={<AdminDashboard />} />
@@ -76,6 +77,9 @@ function App() {
               </Routes>
             </div>
           </div>
+        </div>
+        <div className={`shadow-md w-full pt-5 h-16 dark:bg-main-dark-bg bg-white`}>
+          <Footer />
         </div>
       </BrowserRouter>
     </div>

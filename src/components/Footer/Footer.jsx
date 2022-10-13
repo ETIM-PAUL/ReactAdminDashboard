@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <p className="dark:text-gray-200 text-gray-700 text-center">HosPiD ©2022 Terms and Conditions apply.</p>
   )
 }
 
-export default Footer
+const FooterMemo = memo(Footer)
+export { FooterMemo as Footer }
