@@ -13,6 +13,7 @@ import { HiSun, HiMoon } from "react-icons/hi";
 import { TasksManager } from './containers/TaskManager';
 import "./App.css";
 import { Footer } from './components/Footer';
+import { Chats, ChatView } from './containers/Chats';
 
 function App() {
   const { state, dispatch } = useStateContext()
@@ -63,10 +64,10 @@ function App() {
               <SideBar />
             </div>
           )}
-          <div className={`dark:bg-secondary-dark-bg bg-main-bg  w-full ${activeMenu ? 'md:ml-72 ' : 'flex-2'}`}>
+          <div className={`dark:bg-secondary-dark-bg bg-main-bg h-[93vh] w-full overflow-y-scroll pb-2 ${activeMenu ? 'md:ml-72 ' : 'flex-2'}`}>
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full"><NavBar /></div>
 
-            <div className='mt-24 md:mt-0'>
+            <div className='mt-24 md:mt-0 '>
               <Routes>
                 <Route path="/" element={<AdminDashboard />} />
                 <Route path="/admin" element={<AdminDashboard />} />
@@ -74,11 +75,13 @@ function App() {
                 <Route path="/patients" element={<Patients />} />
                 <Route path="/appointments" element={<Appointments />} />
                 <Route path="/tasks-manager" element={<TasksManager />} />
+                <Route path="/messages" element={<Chats />} />
+                <Route path="/message/:id" element={<ChatView />} />
               </Routes>
             </div>
           </div>
         </div>
-        <div className={`shadow-md w-full pt-5 h-16 dark:bg-main-dark-bg bg-white`}>
+        <div className={`shadow-md w-full pt-5 h-[7vh] dark:bg-main-dark-bg bg-white fixed bottom-0`}>
           <Footer />
         </div>
       </BrowserRouter>

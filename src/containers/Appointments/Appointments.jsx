@@ -8,7 +8,7 @@ const Appointments = () => {
   return (
     <div className="m-2 md:m-10 p-2 md:p-10 bg-white dark:bg-main-dark-bg rounded-3xl" >
       <Header title="Appointments" />
-      <ScheduleComponent height="600px" eventSettings={{ dataSource: scheduleData }} selectedDate={new Date(2022, 0, 10)}>
+      <ScheduleComponent height="410px" eventSettings={{ dataSource: scheduleData }} selectedDate={new Date(2022, 0, 10)}>
         <Inject services={[Day, Week, WorkWeek, Month, Agenda, Resize, DragAndDrop]} />
       </ScheduleComponent>
     </div>

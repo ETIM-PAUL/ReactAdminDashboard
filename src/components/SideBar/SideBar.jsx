@@ -15,6 +15,7 @@ const SideBar = () => {
     if (activeMenu && screenSize <= 900) {
       dispatch({ type: "setActiveMenu", payload: false })
     }
+    dispatch({ type: "showDropDown", payload: "" })
   };
   return (
     <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10">
