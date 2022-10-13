@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { BsChatLeft, BsFillBookmarkPlusFill } from 'react-icons/bs';
 import { RiNotification3Line } from 'react-icons/ri';
-import { MdCancel, MdKeyboardArrowDown } from 'react-icons/md';
-import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 import { Nav } from './Nav';
 import avatar from '../../assets/avatar.jpg';
-import { Cart, Chat, Notifications } from './index';
 import { useStateContext } from '../../contexts';
 import { DropDown } from '../DropMenu/DropDown';
 import { Link } from 'react-router-dom';
+import { UserProfile } from '../Profile';
 
 const NavBar = () => {
   const { state, dispatch } = useStateContext();
@@ -26,13 +25,13 @@ const NavBar = () => {
 
     return () => window.removeEventListener('resize', handleResize);
 
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (screenSize <= 900) {
       dispatch({ type: "setActiveMenu", payload: true })
     } else dispatch({ type: "setActiveMenu", payload: false })
-  }, [screenSize]);
+  }, [screenSize, dispatch]);
 
 
 
@@ -49,9 +48,13 @@ const NavBar = () => {
         </Link>
         <Nav title="Chats" dotColor="#03C9D7" customFunction={() => dispatch({ type: "showDropDown", payload: "chat" })} color="blue" icon={<BsChatLeft />} />
         <Nav title="Notifications" dotColor="#03C9D7" customFunction={() => dispatch({ type: "showDropDown", payload: "notifications" })} color="blue" icon={<RiNotification3Line />} />
-        <img src={avatar} alt="profile" className="rounded-full h-10 w-10 p-2" />
-        <span className="text-gray-400 font-bold ml-1">insider_man</span>
-        <MdKeyboardArrowDown className="text-gray-400" />
+        <div className='flex items-center gap-1 hover:cursor-pointer'
+          onClick={() => dispatch({ type: "showDropDown", payload: "profile" })}>
+          <img src={avatar} alt="profile" className="rounded-full h-10 w-10 p-2" />
+          <span className="text-gray-400 font-bold ml-1">insider_man</span>
+          <MdKeyboardArrowDown className="text-gray-400 text-2xl" />
+
+        </div>
       </div>
     </div>
       {dropDown === "chat" &&
@@ -59,6 +62,9 @@ const NavBar = () => {
       }
       {dropDown === "notifications" &&
         <DropDown title="Notifications" />
+      }
+      {dropDown === "profile" &&
+        <UserProfile title="My Profile" />
       }
     </>
 

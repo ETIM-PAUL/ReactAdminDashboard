@@ -19,7 +19,7 @@ const DropDown = ({ title }) => {
           {chatData.splice(0, 4).map((item, index) => (
             <div key={index}>
               <div className="flex gap-3 items-center mb-2">
-                <img src={item.image} className="rounded-full w-12 h-12" />
+                <img src={item.image} className="rounded-full w-12 h-12" alt="" />
                 <div div className="inline-block" >
                   <p className="text-slate-800 dark:text-blue-700 font-semibold text-sm mb-1">{item.message}</p>
                   <p className="text-xs dark:text-blue-200">{item.desc}</p>

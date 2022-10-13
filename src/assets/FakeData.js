@@ -1,12 +1,11 @@
 import React from 'react';
 import { AiOutlineCalendar } from 'react-icons/ai';
-import { FiEdit, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
-import { BsKanban, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft, BsFillChatSquareDotsFill } from 'react-icons/bs';
+import { FiBarChart, FiCreditCard } from 'react-icons/fi';
+import { BsKanban, BsBoxSeam, BsShield, BsFillChatSquareDotsFill } from 'react-icons/bs';
 import { IoMdContacts } from 'react-icons/io';
 import { RiAdminFill, RiContactsLine } from 'react-icons/ri';
-import { MdOutlineSupervisorAccount } from 'react-icons/md';
+import { MdLocalHospital, MdOutlineSupervisorAccount } from 'react-icons/md';
 import { HiOutlineRefresh } from 'react-icons/hi';
-import { TiTick } from 'react-icons/ti';
 import { GrLocation } from 'react-icons/gr';
 import avatar from './avatar.jpg';
 import avatar2 from './avatar2.jpg';
@@ -314,7 +313,7 @@ export const billsData = [
 
 export const userProfileData = [
   {
-    icon: <BsCurrencyDollar />,
+    icon: <MdLocalHospital />,
     title: 'My Profile',
     desc: 'Account Settings',
     iconColor: '#03C9D7',
@@ -323,9 +322,10 @@ export const userProfileData = [
   {
     icon: <BsShield />,
     title: 'My Inbox',
-    desc: 'Messages & Emails',
+    desc: 'Messages & Notifications',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
+    link: 'messages',
   },
   {
     icon: <FiCreditCard />,
@@ -333,6 +333,7 @@ export const userProfileData = [
     desc: 'To-do and Daily Tasks',
     iconColor: 'rgb(255, 244, 229)',
     iconBg: 'rgb(254, 201, 15)',
+    link: 'tasks-manager'
   },
 ];
 

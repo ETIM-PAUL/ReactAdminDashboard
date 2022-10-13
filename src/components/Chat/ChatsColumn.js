@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import { Link } from 'react-router-dom';
-import { chatData, employeesData } from '../../assets/FakeData'
+import { chatData } from '../../assets/FakeData'
 
 const ChatsColumn = () => {
   const dotColor = ["green", "red", "yellow"]
@@ -22,7 +22,7 @@ const ChatsColumn = () => {
         <Link key={index} to={`/message/${item.name}`}>
           <div className="cursor-pointer">
             <div className="flex gap-3 items-center mb-2 hover:bg-gray-500 px-3 py-1 rounded-md ">
-              <img src={item.image} className="rounded-full w-12 h-12" />
+              <img src={item.image} className="rounded-full w-12 h-12" alt="" />
               <div className='flex justify-between w-full items-center'>
                 <div div className="inline-block justify-self-start" >
                   <p className="text-slate-800 dark:text-blue-700 font-semibold text-sm mb-1">{item.name}</p>

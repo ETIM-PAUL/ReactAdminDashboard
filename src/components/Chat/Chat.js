@@ -14,7 +14,7 @@ const Chat = () => {
   useEffect(() => {
     const message = messages.filter((message) => message.name === id)
     setMessages(message)
-  }, [])
+  }, [id])
 
   const sendMessage = () => {
     const time = new Date()
