@@ -1,7 +1,7 @@
 import React from 'react';
 import { MdCancel } from 'react-icons/md';
 import { userProfileData } from '../../assets/FakeData';
-import avatar from '../../assets/avatar.jpg';
+import avatar3 from '../../assets/avatar3.png';
 import { Nav } from '../NavBar/Nav';
 import { useStateContext } from '../../contexts';
 import { Link } from 'react-router-dom';
@@ -19,13 +19,13 @@ const UserProfile = ({ title }) => {
       <div className="flex gap-5 items-center mt-6 border-color border-b-1 pb-6">
         <img
           className="rounded-full h-24 w-24"
-          src={avatar}
+          src={avatar3}
           alt="user-profile"
         />
         <div>
           <p className="font-semibold text-xl dark:text-gray-200"> insider_man </p>
           <p className="text-gray-500 text-sm dark:text-gray-400">  Administrator   </p>
-          <p className="text-gray-500 text-sm font-semibold dark:text-gray-400"> etimpaul22@hospid.com </p>
+          <p className="text-gray-500 text-sm font-semibold dark:text-gray-400"> etimpaul@hospid.com </p>
         </div>
       </div>
       <div>

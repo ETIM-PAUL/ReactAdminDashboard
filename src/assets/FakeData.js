@@ -16,26 +16,21 @@ export const kanbanGrid = [
   {
     headerText: 'To Do',
     keyField: 'Open',
-    allowToggle: true
+    allowToggle: true,
+
   },
 
   {
     headerText: 'In Progress',
     keyField: 'InProgress',
-    allowToggle: true
-  },
-
-  {
-    headerText: 'Testing',
-    keyField: 'Testing',
     allowToggle: true,
-    isExpanded: false
+
   },
 
   {
     headerText: 'Done',
     keyField: 'Close',
-    allowToggle: true
+    allowToggle: true,
   },
 ];
 const gridEmployeeProfile = (props) => (
@@ -927,75 +922,6 @@ export const SparklineAreaData = [
 
 ];
 
-export const lineCustomSeries = [
-  {
-    dataSource: lineChartData[0],
-    xName: 'x',
-    yName: 'y',
-    name: 'Germany',
-    width: '2',
-    marker: { visible: true, width: 10, height: 10 },
-    type: 'Line'
-  },
-
-  {
-    dataSource: lineChartData[1],
-    xName: 'x',
-    yName: 'y',
-    name: 'England',
-    width: '2',
-    marker: { visible: true, width: 10, height: 10 },
-    type: 'Line'
-  },
-
-  {
-    dataSource: lineChartData[2],
-    xName: 'x',
-    yName: 'y',
-    name: 'India',
-    width: '2',
-    marker: { visible: true, width: 10, height: 10 },
-    type: 'Line'
-  },
-
-];
-
-export const pieChartData = [
-  { x: 'Labour', y: 18, text: '18%' },
-  { x: 'Legal', y: 8, text: '8%' },
-  { x: 'Production', y: 15, text: '15%' },
-  { x: 'License', y: 11, text: '11%' },
-  { x: 'Facilities', y: 18, text: '18%' },
-  { x: 'Taxes', y: 14, text: '14%' },
-  { x: 'Insurance', y: 16, text: '16%' },
-];
-
-export const contextMenuItems = [
-  'AutoFit',
-  'AutoFitAll',
-  'SortAscending',
-  'SortDescending',
-  'Copy',
-  'Edit',
-  'Delete',
-  'Save',
-  'Cancel',
-  'PdfExport',
-  'ExcelExport',
-  'CsvExport',
-  'FirstPage',
-  'PrevPage',
-  'LastPage',
-  'NextPage',
-];
-
-export const ecomPieChartData = [
-  { x: '2018', y: 18, text: '35%' },
-  { x: '2019', y: 18, text: '15%' },
-  { x: '2020', y: 18, text: '25%' },
-  { x: '2021', y: 18, text: '25%' },
-];
-
 export const stackedChartData = [
   [
     { x: 'Jan', y: 111.1 },
@@ -1023,7 +949,7 @@ export const stackedCustomSeries = [
     dataSource: stackedChartData[0],
     xName: 'x',
     yName: 'y',
-    name: 'Budget',
+    name: 'Death',
     type: 'StackingColumn',
     background: 'blue',
 
@@ -1033,7 +959,7 @@ export const stackedCustomSeries = [
     dataSource: stackedChartData[1],
     xName: 'x',
     yName: 'y',
-    name: 'Expense',
+    name: 'Discharged',
     type: 'StackingColumn',
     background: 'red',
 
@@ -1069,12 +995,12 @@ export const kanbanData = [
     Id: 'Task 1',
     Title: 'Task - 29001',
     Status: 'Open',
-    Summary: 'Analyze the new requirements gathered from the customer.',
+    Summary: 'Analyze the new sample gathered from the donors.',
     Type: 'Story',
     Priority: 'Low',
     Tags: 'Analyze,Customer',
     Estimate: 3.5,
-    Assignee: 'Nancy Davloio',
+    Assignee: 'Bassey Ekpo',
     RankId: 1,
     Color: '#02897B',
     ClassName: 'e-story, e-low, e-nancy-davloio',
@@ -1083,12 +1009,12 @@ export const kanbanData = [
     Id: 'Task 2',
     Title: 'Task - 29002',
     Status: 'InProgress',
-    Summary: 'Improve application performance',
+    Summary: 'Setting Conference Hall for Staffs meeting',
     Type: 'Improvement',
     Priority: 'Normal',
     Tags: 'Improvement',
     Estimate: 6,
-    Assignee: 'Andrew Fuller',
+    Assignee: 'Andrew Inim',
     RankId: 1,
     Color: '#673AB8',
     ClassName: 'e-improvement, e-normal, e-andrew-fuller',
@@ -1097,12 +1023,12 @@ export const kanbanData = [
     Id: 'Task 3',
     Title: 'Task - 29003',
     Status: 'Open',
-    Summary: 'Arrange a web meeting with the customer to get new requirements.',
+    Summary: 'Arrange a web meeting with the CEO to get insights.',
     Type: 'Others',
     Priority: 'Critical',
     Tags: 'Meeting',
     Estimate: 5.5,
-    Assignee: 'Janet Leverling',
+    Assignee: 'Mbakara Asuquo',
     RankId: 2,
     Color: '#1F88E5',
     ClassName: 'e-others, e-critical, e-janet-leverling',
@@ -1111,12 +1037,12 @@ export const kanbanData = [
     Id: 'Task 4',
     Title: 'Task - 29004',
     Status: 'InProgress',
-    Summary: 'Fix the issues reported in the IE browser.',
+    Summary: 'Fix the issues reported in the Lab Eqiupments.',
     Type: 'Bug',
     Priority: 'Critical',
     Tags: 'IE',
     Estimate: 2.5,
-    Assignee: 'Janet Leverling',
+    Assignee: 'Janet Adams',
     RankId: 2,
     Color: '#E64A19',
     ClassName: 'e-bug, e-release, e-janet-leverling',
@@ -1125,12 +1051,12 @@ export const kanbanData = [
     Id: 'Task 5',
     Title: 'Task - 29005',
     Status: 'Review',
-    Summary: 'Fix the issues reported by the customer.',
+    Summary: 'Send the issues reported by Patient 12487 to the Chief Surgeon.',
     Type: 'Bug',
     Priority: 'Low',
     Tags: 'Customer',
     Estimate: '3.5',
-    Assignee: 'Steven walker',
+    Assignee: 'Tommy Ubong',
     RankId: 1,
     Color: '#E64A19',
     ClassName: 'e-bug, e-low, e-steven-walker',
@@ -1139,12 +1065,12 @@ export const kanbanData = [
     Id: 'Task 6',
     Title: 'Task - 29007',
     Status: 'Validate',
-    Summary: 'Validate new requirements',
+    Summary: 'Validate new requirements for the new children ward',
     Type: 'Improvement',
     Priority: 'Low',
     Tags: 'Validation',
     Estimate: 1.5,
-    Assignee: 'Robert King',
+    Assignee: 'Essien Oku',
     RankId: 1,
     Color: '#673AB8',
     ClassName: 'e-improvement, e-low, e-robert-king',
@@ -1153,12 +1079,12 @@ export const kanbanData = [
     Id: 'Task 7',
     Title: 'Task - 29009',
     Status: 'Review',
-    Summary: 'Fix the issues reported in Safari browser.',
+    Summary: 'Fix the issues reported in the female ward toilets.',
     Type: 'Bug',
     Priority: 'Critical',
     Tags: 'Fix,Safari',
     Estimate: 1.5,
-    Assignee: 'Nancy Davloio',
+    Assignee: 'Nta Itah',
     RankId: 2,
     Color: '#E64A19',
     ClassName: 'e-bug, e-release, e-nancy-davloio',
@@ -1172,7 +1098,7 @@ export const kanbanData = [
     Priority: 'Low',
     Tags: 'Review,IE',
     Estimate: 5.5,
-    Assignee: 'Margaret hamilt',
+    Assignee: 'Otu Abasi',
     RankId: 3,
     Color: '#02897B',
     ClassName: 'e-story, e-low, e-margaret-hamilt',
@@ -1186,7 +1112,7 @@ export const kanbanData = [
     Priority: 'High',
     Tags: 'Validation,Fix',
     Estimate: 1,
-    Assignee: 'Steven walker',
+    Assignee: 'Orok Ita',
     RankId: 1,
     Color: '#02897B',
     ClassName: 'e-story, e-high, e-steven-walker',
@@ -1200,7 +1126,7 @@ export const kanbanData = [
     Priority: 'High',
     Tags: 'Database,SQL',
     Estimate: 5.5,
-    Assignee: 'Margaret hamilt',
+    Assignee: 'Asim Ita',
     RankId: 4,
     Color: '#02897B',
     ClassName: 'e-story, e-high, e-margaret-hamilt',

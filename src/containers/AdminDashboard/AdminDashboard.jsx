@@ -12,7 +12,7 @@ const AdminDashboard = () => {
           <div className="flex justify-between items-center">
             <div>
               <p className='font-bold text-blue-600'>
-                Total Bills
+                Total Bills Paid
               </p>
               <p className='text-3xl font-bold'>
                 $103,00.00
@@ -34,19 +34,19 @@ const AdminDashboard = () => {
         <div className="flex gap-10 flex-wrap justify-center">
           <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780">
             <div className="flex justify-between">
-              <p className="font-semibold">Revenue Updates</p>
+              <p className="font-semibold">Stats Updates</p>
               <div className="flex items-center gap-4">
-                <p className=" flex items-center gap-2 text-red-600 hover:drop-shadow-xl">
-                  <span>
-                    <GoPrimitiveDot />
-                  </span>
-                  <span>Expenses</span>
-                </p>
                 <p className=" flex items-center gap-2 text-blue-400 hover:drop-shadow-xl">
                   <span>
                     <GoPrimitiveDot />
                   </span>
-                  <span>Budget</span>
+                  <span>Discharged</span>
+                </p>
+                <p className=" flex items-center gap-2 text-red-500 hover:drop-shadow-xl">
+                  <span>
+                    <GoPrimitiveDot />
+                  </span>
+                  <span>Death</span>
                 </p>
               </div>
             </div>
@@ -54,17 +54,17 @@ const AdminDashboard = () => {
               <div className="border-r-1 border-color m-4 pr-10">
                 <div>
                   <p className="flex items-center">
-                    <span className="text-3xl font-semibold">$75,000.00</span>
+                    <span className="text-3xl font-semibold">345</span>
                     <span className="p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-blue-400 ml-3 text-xs ">%15</span>
                   </p>
-                  <p className="text-gray-600 mt-1">Budget</p>
+                  <p className="text-gray-600 mt-1">Discharged</p>
                 </div>
                 <div className="mt-6">
                   <p className="flex items-center">
-                    <span className="text-3xl font-semibold">$30,000.00</span>
+                    <span className="text-3xl font-semibold">84</span>
                     <span className="p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white ml-3 bg-red-600 text-xs ">%30</span>
                   </p>
-                  <p className="text-gray-600 mt-1">Expenses</p>
+                  <p className="text-gray-600 mt-1">Death</p>
                 </div>
                 <div className="mt-6">
                   <SparkLine

@@ -16,7 +16,7 @@ const Starked = ({ ...props }) => {
       }
       chartArea={{ border: { width: 0 } }}
       legendSettings={{ enableHighlight: true, background: "white" }}
-      title="Amount of Bills by Payment Method"
+      title="Influx and Outflux of Patients"
       tooltip={{ enable: true }}
     >
       <Inject

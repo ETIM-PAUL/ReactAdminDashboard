@@ -4,7 +4,7 @@ import { BsChatLeft, BsFillBookmarkPlusFill } from 'react-icons/bs';
 import { RiNotification3Line } from 'react-icons/ri';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { Nav } from './Nav';
-import avatar from '../../assets/avatar.jpg';
+import avatar3 from '../../assets/avatar3.png';
 import { useStateContext } from '../../contexts';
 import { DropDown } from '../DropMenu/DropDown';
 import { Link } from 'react-router-dom';
@@ -50,7 +50,7 @@ const NavBar = () => {
         <Nav title="Notifications" dotColor="#03C9D7" customFunction={() => dispatch({ type: "showDropDown", payload: "notifications" })} color="blue" icon={<RiNotification3Line />} />
         <div className='flex items-center gap-1 hover:cursor-pointer'
           onClick={() => dispatch({ type: "showDropDown", payload: "profile" })}>
-          <img src={avatar} alt="profile" className="rounded-full h-10 w-10 p-2" />
+          <img src={avatar3} alt="profile" className="rounded-full h-10 w-10 p-2" />
           <span className="text-gray-400 font-bold ml-1">insider_man</span>
           <MdKeyboardArrowDown className="text-gray-400 text-2xl" />
 

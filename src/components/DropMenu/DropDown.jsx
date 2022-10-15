@@ -16,7 +16,7 @@ const DropDown = ({ title }) => {
           <Nav color="gray" icon={<MdCancel />} customFunction={() => dispatch({ type: "showDropDown", payload: "" })} />
         </div>
         <div className="my-8">
-          {chatData.splice(0, 4).map((item, index) => (
+          {chatData.slice(0, 4).map((item, index) => (
             <div key={index}>
               <div className="flex gap-3 items-center mb-2">
                 <img src={item.image} className="rounded-full w-12 h-12" alt="" />
