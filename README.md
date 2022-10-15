@@ -7,36 +7,36 @@ This app allows you to manipulate the patient data, the employees data, book app
 
 ##Dashboard
 <img
-  src="react-admin-dashboard/src/assets/dashboard2.png"
+  src="src/assets/dashboard2.png"
   alt="Home Page"
   style="display: inline-block; margin: 0 auto;  max-width: 300px max-height:200px" />
 
 ##Employees
 <img
-  src="react-admin-dashboard/src/assets/dashboard2.png"
+  src="src/assets/dashboard2.png"
   alt="Home Page"
   style="display: inline-block; margin: 0 auto;  max-width: 300px max-height:200px" />
 
 ##Patients
 <img
-  src="react-admin-dashboard/src/assets/dashboard4.png"
+  src="src/assets/dashboard4.png"
   alt="Home Page"
   style="display: inline-block; margin: 0 auto;  max-width: 300px max-height:200px" />
 
 ##Appointments
 <img
-  src="react-admin-dashboard/src/assets/dashboard5.png"
+  src="src/assets/dashboard5.png"
   alt="Home Page"
   style="display: inline-block; margin: 0 auto;  max-width: 300px max-height:200px" />
 
 ##Chats
 <img
-  src="react-admin-dashboard/src/assets/chat.png"
+  src="src/assets/chat.png"
   alt="Home Page"
   style="display: inline-block; margin: 0 auto;  max-width: 300px max-height:200px" />
 
 ##Light Theme Chat
 <img
-  src="react-admin-dashboard/src/assets/lightChat.png"
+  src="src/assets/lightChat.png"
   alt="Home Page"
   style="display: inline-block; margin: 0 auto;  max-width: 300px max-height:200px" />
